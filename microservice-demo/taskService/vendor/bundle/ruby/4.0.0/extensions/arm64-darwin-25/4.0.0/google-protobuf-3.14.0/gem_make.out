@@ -1,0 +1,297 @@
+current directory: /Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/taskService/vendor/bundle/ruby/4.0.0/gems/google-protobuf-3.14.0/ext/google/protobuf_c
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/taskService/vendor/bundle/ruby/4.0.0/gems/google-protobuf-3.14.0/ext/google/protobuf_c
+make -j3 DESTDIR\= sitearchdir\=./.gem.20260810-45735-9vej7o sitelibdir\=./.gem.20260810-45735-9vej7o clean
+
+current directory: /Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/taskService/vendor/bundle/ruby/4.0.0/gems/google-protobuf-3.14.0/ext/google/protobuf_c
+make -j3 DESTDIR\= sitearchdir\=./.gem.20260810-45735-9vej7o sitelibdir\=./.gem.20260810-45735-9vej7o
+compiling protobuf.c
+compiling defs.c
+compiling storage.c
+In file included from In file included from storage.c:31:
+In file included from protobuf.c:defs.c:3133:
+:
+In file included from In file included from ./protobuf.h./protobuf.h::3434:
+In file included from In file included from ./protobuf.h:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h::
+28In file included from :
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.hIn file included from :/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.h28/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:28:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.h:24:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.h:24:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/char.h:23:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/int.h:26:
+:
+In file included from :/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h24::
+117In file included from :/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/char.h25::23 :
+warning: In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/char.hmixing declarations and code is a C99 extension [-Wdeclaration-after-statement]:
+23:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/int.h:26:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h:/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/int.h:26:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h:117:25:117 :25warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+  117 |     117  |    c117o | n s t   ucnos i g n ed lcoonngs tj  unsignen= RBIMPLd lst uon_gn sji g=n eRdB IlMoPnCgA SjT (=( uRnBsL_CAST((unsiIgMnPeidg Ll_oCnAgS)Ti()(;u
+n      s| i                        ^g
+ned longn)eid) ;l
+o      n| g                        ^)i);
+      |                         ^
+
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h::169169::2424:/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h:169:24: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+
+ warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]  169 | 
+    cons  169 |       co169 |  t    cSoInst SIGNED_nVALUEs y = RBIMPGLN_Et SICGDN_EVDA_ALSUTE( (yS I= RBIMGPNLE_DC_AVSATLVUEALUE y((S)IG(NxE D-_ VRAULBUYE_)(x - RUBY_FF I= RBIMPL_CAST((SIGNED_VIALUEX)XNUM_FLA(NxU M-_ GR)UBY_FFIXNUM_FLALG));)
+;      
+|                              ^| 
+                       ^
+AG));
+      |                        ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h:196:24: warning: /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.hmixing declarations and code is a C99 extension [-Wdeclaration-after-statement]:
+196:24:   196 |    warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+   /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/long.h:196:24: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+co196n |    196  |    const SIsGNtE DS_IVGANLEUDE_ VyA    conLst SI=GNED_ VRABLIUMPULE_ CyA S=T (R(BSIMEPL_CAST (y( S=I GRNBEIGNEDIDM_PVLA_LCUAES)Tx()(;S
+I      G| N                       ^E
+D_V_VALUE)x);
+      |                        ^
+ALUE)x);
+      |                        ^
+In file included from In file included from storage.cdefs.c::3133:
+:
+In file included from protobuf.c:31:
+In file included from ./protobuf.h:In file included from 34./protobuf.h:
+:In file included from 34/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:
+:In file included from 28/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.hIn file included from ./protobuf.h::
+:In file included from 28/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.h:
+:In file included from 24/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.h:
+:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:28:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.h:24:
+In file included from 24/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/char.h:
+:In file included from 29/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/char.h:
+:In file included from 29/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rstring.h:
+:In file included from 30/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rstring.h:
+:In file included from 30:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/fl_type.h:38:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/value_type.h:191:11: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/fl_type.h/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/char.h
+:38:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/value_type.h  ::29:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rstring.h:30:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/fl_type.h:38191 |     VAL191:11: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]:
+
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/value_type.h:191UE ret = :R  B191A | S I C (11o:b jwarning: )mixing declarations and code is a C99 extension [-Wdeclaration-after-statement] 
+VALUE -r  e191t = RB>AfSlIaCg(so b&j ) | ->RUBY_T_MAflags &  S K ; 
+V      A| L          ^U
+RUBY_T_MEA retSK;
+      |  = RBASIC(obj)-          ^
+>flags & RUBY_T_MASK;
+      |           ^
+In file included from storage.c:31:
+In file included from ./protobuf.h:34:
+In file included from In file included from protobuf.c:31:
+In file included from ./protobuf.h:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:28:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.h:37:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.hIn file included from :defs.c28::
+33In file included from :
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.hIn file included from :./protobuf.h37::
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/st_data_t.h:71:19: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/st_data_t.h
+:3471:
+   In file included from 71/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h | : 28 :
+ In file included from  /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic.hu:n37::
+19/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/arithmetic/st_data_t.h:: 71warning: :mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]19
+:    warning: 71mixing declarations and code is a C99 extension [-Wdeclaration-after-statement] | 
+    sui   g71n | e d   l ounngsnsigned  y = RlBoInMgP Ly_ i=g nReBCAST((unsigned long)dx )l;IMPL_oCAST
+      n| g                  ^ y = 
+R(B(IuMnPsLi_gCnAeSdT l(on(gu)nxs)i;g
+n      e| d                  ^ long)x)
+;
+      |                   ^
+In file included from storage.c:31:
+In file included from ./protobuf.h:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:29:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h:23:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:240:11: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+  240 |     VALUE f = RBASIC(ary)->flags;
+      |           ^
+In file included from In file included from protobuf.cdefs.c::3133:
+:
+In file included from ./protobuf.h:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:In file included from 29./protobuf.h:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h::
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h:23:
+29/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:
+:In file included from 240/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h::1123::
+ /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:240:11: warning: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+  mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]240
+ |     VA  L240 |   UE f = R B VALUASIC(Ea f = RBASrIy)-C>f(laargy)->flagss;
+      |           ^
+;
+      |           ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:370:11: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:370:11: 
+  warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+  370370 |  |         VVALUE tmp A=L UREB _tOmBpJ _=W BR_BU_NOPROTECB/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.hJ_TWB__FUONRP(RAOR:370:11: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+TREACYT  _370F | O, ary);
+       |            ^ 
+ VALUE tR(ARRAY, ary);m
+      |           ^
+p = RB_OBJ_WB_UNPROTECT_FOR(ARRAY, ary);
+      |           ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h388::3885/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:5::: warning:  mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]warning: 388mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]:
+5: 
+warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]  388 |     R  A
+  388 |     388R | A R R A YR_APRRRAY_PTR_USE(ary,TRRA_YU_SPET(Ra_rUyS Ep(tarr,y
+,       | p    ^t
+r,
+      |     ^
+, ptr,
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:349:5: /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.hnote: :expanded from macro 'RARRAY_PTR_USE'349
+:5:   note: 349 |     Rexpanded from macro 'RARRAY_PTR_USE'/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h
+:349:5  : note: expanded from macro 'RARRAY_PTR_USE'
+  349 | BIMPL_RARRAY_S T M T (RaBrI349 |     RBIMPL_RyA,R RpAtYr__STMT(aryname, expr,) 
+p      t| r    ^M
+PL_RA/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.hR:R_nameA317Y:_17S:T Mnote: Texpanded from macro 'RBIMPL_RARRAY_STMT'(
+  a317r | y ,   p t, expr)
+      | const VALUE r_name, ex    ^r
+bimpl_ar/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.hy: p=r )(
+a      r| y    ^)
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:317:17: note: expanded from macro 'RBIMPL_RARRAY_STMT'
+  317317 | : 17 :   note: cexpanded from macro 'RBIMPL_RARRAY_STMT'o
+n  317 |     c;  o n s t st VA L U EVALUE rbimpl_ary =           ( a r y ) ;   \
+      |                 ^
+ rb i m          p l _ a r y = (ary        ) ;\ 
+        |                  ^ 
+                     \
+      |                 ^
+In file included from In file included from defs.cstorage.c::3331:
+In file included from ./protobuf.h:34:
+In file included from protobuf.c:31:
+In file included from In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:29:
+In file included from :
+In file included from ./protobuf.h:34:
+./protobuf.hIn file included from :/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:29:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h:/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h30:29:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h:30:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/robject.h::
+132::3027:
+: /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/robject.h/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/robject.h:132::27132:: 27warning: :mixing declarations and code is a C99 extension [-Wdeclaration-after-statement] 
+warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+  132  132 |     |   s t r usctruct   132 |  t RObject *cRObject * co nst  spttr = ROBJECT(obj);
+      | o                          ^n
+st ptrr u=c ROBJEt RObjeCT(oct *cobj);
+      |                           ^n
+st ptr = ROBJECT(obj);
+      |                           ^
+In file included from In file included from storage.cprotobuf.c::3131:
+:
+In file included from In file included from ./protobuf.h:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:29:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h./protobuf.h::3134:
+:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rregexp.hIn file included from :/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h106::2911:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h::31 :
+warning: /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rregexp.hmixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+  106 |   : 106 :V11A:L Uwarning: Emixing declarations and code is a C99 extension [-Wdeclaration-after-statement] 
+ret =   106R | R EGEXP( rex p) -V>src;
+A      L| U          ^E
+ ret = RREGEXP(rexp)->src;
+      |           ^
+In file included from defs.c:33:
+In file included from ./protobuf.h:34:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/ruby.h:29:
+In file included from /opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core.h:31:
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rregexp.h:106:11: warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+  106 |     VALUE ret = RREGEXP(rexp)->src;
+      |           ^
+In file included from In file included from defs.cstorage.cIn file included from protobuf.c:31:
+In file included from ./protobuf.h::31:3833:
+:
+:
+./upb.hIn file included from :./protobuf.h83:5: warning: :38:
+./upb.hIn file included from :./protobuf.h'__STDC_VERSION__' is not defined, evaluates to 0 [-Wundef]
+:   8338 | #if __STD83C_:V:
+./upb.h:83:5: warning: '__STDC_VERSION__' is not defined, evaluates to 0 [-Wundef]
+5:    warning: 83 | E#i'__STDC_VERSION__' is not defined, evaluates to 0 [-Wundef]f R_S_ISTDC_VEOR
+SION__ >=N _1_9 9>9=0 11L9 9|9|0   183L |  #|i| __cplu s_p_lcupslusplusf > => =2 0210110130 __STLD
+C      _| 3    ^
+VE./upb.hL:
+83      :| 36    ^:
+ warning: '__cplusplus' is not defined, evaluates to 0 [-Wundef]
+RSIO   83 | #if __STDC./upb.h_:V83E:R36S:I Owarning: N'__cplusplus' is not defined, evaluates to 0 [-Wundef]__ >= 19990N1_L_  |>|=  _1_9c9p9l0u1sLp 
+l   u83|s|  >_=_ c2p0l1u1s0p3lLu
+s >= 20110 | #if __STDC_V      E| R                                   ^S
+ION__ >= 139L9901L || __c
+p      l|     ^
+u./upb.hs:p83l:u36s:  >warning: '__cplusplus' is not defined, evaluates to 0 [-Wundef]
+   83 | #if =__STDC_VER 201103L
+      |                                    ^
+SION__ >= 199901L || __cplusplus >= 201103L
+      |                                    ^
+defs.c:93:45: warning: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+   93 |     const char *label = upb_enumdef_iton(e, val);
+      |                         ~~~~~~~~~~~~~~~~    ^~~
+defs.c:182:18: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  182 |   submsg_count = RARRAY_LEN(submsgs);
+      |                ~ ^~~~~~~~~~~~~~~~~~~
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:51:36: note: expanded from macro 'RARRAY_LEN'
+   51 | #define RARRAY_LEN                 rb_array_len                 /**< @alias{rb_array_len} */
+      |                                    ^
+defs.c:183:16: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  183 |   enum_count = RARRAY_LEN(enum_pos);
+      |              ~ ^~~~~~~~~~~~~~~~~~~~
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:51:36: note: expanded from macro 'RARRAY_LEN'
+   51 | #define RARRAY_LEN                 rb_array_len                 /**< @alias{rb_array_len} */
+      |                                    ^
+storage.c:535:64: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  535 |       layout->fields[upb_fielddef_index(field)].hasbit = hasbit++;
+      |                                                        ~ ~~~~~~^~
+storage.c:547:26: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  547 |   layout->value_offset = off;
+      |                        ~ ^~~
+storage.c:562:56: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  562 |     layout->fields[upb_fielddef_index(field)].offset = off;
+      |                                                      ~ ^~~
+storage.c:577:56: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  577 |     layout->fields[upb_fielddef_index(field)].offset = off;
+      |                                                      ~ ^~~
+storage.c:594:56: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  594 |     layout->fields[upb_fielddef_index(field)].offset = off;
+      |                                                      ~ ^~~
+storage.c:615:56: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  615 |     layout->fields[upb_fielddef_index(field)].offset = off;
+      |                                                      ~ ^~~
+storage.c:652:58: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  652 |       layout->fields[upb_fielddef_index(field)].offset = off;
+      |                                                        ~ ^~~
+storage.c:653:58: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  653 |       layout->oneofs[upb_oneofdef_index(oneof)].offset = off;
+      |                                                        ~ ^~~
+storage.c:668:61: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  668 |     layout->oneofs[upb_oneofdef_index(oneof)].case_offset = off;
+      |                                                           ~ ^~~
+storage.c:672:18: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  672 |   layout->size = off;
+      |                ~ ^~~
+defs.c:1741:19: error: incompatible function pointer types passing 'VALUE (VALUE, VALUE, int, VALUE *)' (aka 'unsigned long (unsigned long, unsigned long, int, unsigned long *)') to parameter of type 'rb_block_call_func_t' (aka 'unsigned long (*)(unsigned long, unsigned long, int, const unsigned long *, unsigned long)') [-Wincompatible-function-pointer-types]
+ 1741 |                   make_mapentry, types);
+      |                   ^~~~~~~~~~~~~
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/iterator.h:324:90: note: passing argument to parameter 'proc' here
+  324 | VALUE rb_block_call(VALUE obj, ID mid, int argc, const VALUE *argv, rb_block_call_func_t proc, VALUE data2);
+      |                                                                                          ^
+defs.c:1789:31: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+ 1789 |     VALUE args[2] = { INT2NUM(oneof_count), _self };
+      |                       ~~~~~~~ ^~~~~~~~~~~
+defs.c:1840:69: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+ 1839 |     google_protobuf_FieldDescriptorProto_set_oneof_index(fields[i],
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1840 |                                                          oneof_count++);
+      |                                                          ~~~~~~~~~~~^~
+17 warnings and 1 error generated.
+make: *** [defs.o] Error 1
+make: *** Waiting for unfinished jobs....
+12 warnings generated.
+22 warnings generated.
+
+make failed, exit code 2

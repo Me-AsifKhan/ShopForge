@@ -1,0 +1,936 @@
+{
+  "communities": {
+    "0": [
+      "base",
+      "dotenv",
+      "google_protobuf",
+      "object",
+      "projectservice_api",
+      "projectservice_api_api",
+      "projectservice_api_api_createproject",
+      "projectservice_api_api_createtag",
+      "projectservice_api_api_getproject",
+      "projectservice_model",
+      "projectservice_model_create_tables",
+      "projectservice_model_project",
+      "projectservice_model_project_repr",
+      "projectservice_model_tag",
+      "projectservice_model_tag_repr",
+      "projectservice_proto_project_pb2",
+      "projectservice_proto_project_pb2_grpc",
+      "projectservice_proto_project_pb2_grpc_add_projectsvcservicer_to_server",
+      "projectservice_proto_project_pb2_grpc_projectsvc",
+      "projectservice_proto_project_pb2_grpc_projectsvc_createproject",
+      "projectservice_proto_project_pb2_grpc_projectsvc_createtag",
+      "projectservice_proto_project_pb2_grpc_projectsvc_getproject",
+      "projectservice_proto_project_pb2_grpc_projectsvcservicer",
+      "projectservice_proto_project_pb2_grpc_projectsvcservicer_createproject",
+      "projectservice_proto_project_pb2_grpc_projectsvcservicer_createtag",
+      "projectservice_proto_project_pb2_grpc_projectsvcservicer_getproject",
+      "projectservice_proto_project_pb2_grpc_projectsvcstub",
+      "projectservice_proto_project_pb2_grpc_projectsvcstub_init",
+      "projectservice_proto_project_pb2_grpc_rationale_12",
+      "projectservice_proto_project_pb2_grpc_rationale_35",
+      "projectservice_proto_project_pb2_grpc_rationale_38",
+      "projectservice_proto_project_pb2_grpc_rationale_44",
+      "projectservice_proto_project_pb2_grpc_rationale_50",
+      "projectservice_proto_project_pb2_grpc_rationale_81",
+      "projectservice_proto_project_pb2_grpc_rationale_9",
+      "projectservice_service",
+      "projectservice_service_connect_db",
+      "projectservice_service_serve",
+      "projectservice_testclient",
+      "projectservice_testclient_run",
+      "service",
+      "userservice_package_dependencies_dotenv",
+      "userservice_package_dependencies_google_protobuf"
+    ],
+    "1": [
+      "userservice_api",
+      "userservice_api_auth",
+      "userservice_api_bcrypt",
+      "userservice_api_constructor",
+      "userservice_api_messages",
+      "userservice_auth",
+      "userservice_auth_generatetoken",
+      "userservice_auth_jwt",
+      "userservice_auth_verify",
+      "userservice_index",
+      "userservice_index_api",
+      "userservice_index_connectdb",
+      "userservice_index_dbclient",
+      "userservice_index_grpc",
+      "userservice_index_main",
+      "userservice_index_mongoclient",
+      "userservice_index_services",
+      "userservice_proto_user_grpc_pb",
+      "userservice_proto_user_grpc_pb_deserialize_demo_user_getuserrequest",
+      "userservice_proto_user_grpc_pb_deserialize_demo_user_loginrequest",
+      "userservice_proto_user_grpc_pb_deserialize_demo_user_registerrequest",
+      "userservice_proto_user_grpc_pb_deserialize_demo_user_userresponse",
+      "userservice_proto_user_grpc_pb_deserialize_demo_user_verifyrequest",
+      "userservice_proto_user_grpc_pb_deserialize_demo_user_verifyresponse",
+      "userservice_proto_user_grpc_pb_serialize_demo_user_getuserrequest",
+      "userservice_proto_user_grpc_pb_serialize_demo_user_loginrequest",
+      "userservice_proto_user_grpc_pb_serialize_demo_user_registerrequest",
+      "userservice_proto_user_grpc_pb_serialize_demo_user_userresponse",
+      "userservice_proto_user_grpc_pb_serialize_demo_user_verifyrequest",
+      "userservice_proto_user_grpc_pb_serialize_demo_user_verifyresponse",
+      "userservice_proto_user_pb",
+      "userservice_testclient",
+      "userservice_testclient_grpc",
+      "userservice_testclient_main",
+      "userservice_testclient_messages",
+      "userservice_testclient_services"
+    ],
+    "2": [
+      "api_apiclient",
+      "api_apiserver",
+      "clientconn",
+      "dialoption",
+      "marshaler",
+      "protos_api_api_pb_gw",
+      "protos_api_api_pb_gw_go_context",
+      "protos_api_api_pb_gw_go_message",
+      "protos_api_api_pb_gw_go_request",
+      "protos_api_api_pb_gw_local_request_api_createproject_0",
+      "protos_api_api_pb_gw_local_request_api_createtask_0",
+      "protos_api_api_pb_gw_local_request_api_getproject_0",
+      "protos_api_api_pb_gw_local_request_api_listtasks_0",
+      "protos_api_api_pb_gw_local_request_api_listtasks_1",
+      "protos_api_api_pb_gw_local_request_api_listtasks_2",
+      "protos_api_api_pb_gw_local_request_api_loginuser_0",
+      "protos_api_api_pb_gw_local_request_api_registeruser_0",
+      "protos_api_api_pb_gw_local_request_api_updatetask_0",
+      "protos_api_api_pb_gw_registerapihandler",
+      "protos_api_api_pb_gw_registerapihandlerclient",
+      "protos_api_api_pb_gw_registerapihandlerfromendpoint",
+      "protos_api_api_pb_gw_registerapihandlerserver",
+      "protos_api_api_pb_gw_request_api_createproject_0",
+      "protos_api_api_pb_gw_request_api_createtask_0",
+      "protos_api_api_pb_gw_request_api_getproject_0",
+      "protos_api_api_pb_gw_request_api_listtasks_0",
+      "protos_api_api_pb_gw_request_api_listtasks_1",
+      "protos_api_api_pb_gw_request_api_listtasks_2",
+      "protos_api_api_pb_gw_request_api_loginuser_0",
+      "protos_api_api_pb_gw_request_api_registeruser_0",
+      "protos_api_api_pb_gw_request_api_updatetask_0",
+      "servemux",
+      "servermetadata"
+    ],
+    "3": [
+      "api_apiclient_createtask",
+      "api_unimplementedapiserver",
+      "api_unimplementedapiserver_createproject",
+      "api_unimplementedapiserver_createtask",
+      "api_unimplementedapiserver_getproject",
+      "api_unimplementedapiserver_listtasks",
+      "api_unimplementedapiserver_loginuser",
+      "api_unimplementedapiserver_mustembedunimplementedapiserver",
+      "api_unimplementedapiserver_registeruser",
+      "api_unimplementedapiserver_updatetask",
+      "api_unsafeapiserver",
+      "apiservice_cmd_testclient",
+      "apiservice_cmd_testclient_go_command",
+      "apiservice_cmd_testclient_init",
+      "apiservice_cmd_testclient_testclient",
+      "protos_api_api_grpc_pb",
+      "protos_api_api_grpc_pb_api_createproject_handler",
+      "protos_api_api_grpc_pb_api_createtask_handler",
+      "protos_api_api_grpc_pb_api_getproject_handler",
+      "protos_api_api_grpc_pb_api_listtasks_handler",
+      "protos_api_api_grpc_pb_api_loginuser_handler",
+      "protos_api_api_grpc_pb_api_registeruser_handler",
+      "protos_api_api_grpc_pb_api_updatetask_handler",
+      "protos_api_api_grpc_pb_go_clientconninterface",
+      "protos_api_api_grpc_pb_go_context",
+      "protos_api_api_grpc_pb_go_unaryserverinterceptor",
+      "protos_api_api_grpc_pb_newapiclient"
+    ],
+    "4": [
+      "apiservice_cmd_serve",
+      "apiservice_cmd_serve_go_command",
+      "apiservice_cmd_serve_init",
+      "apiservice_cmd_serve_serve",
+      "apiservice_interceptor_auth",
+      "apiservice_interceptor_auth_authenticate",
+      "apiservice_interceptor_auth_getauthfromcontext",
+      "apiservice_interceptor_auth_getuserid",
+      "apiservice_interceptor_auth_go_context",
+      "apiservice_interceptor_auth_go_unaryserverinterceptor",
+      "apiservice_interceptor_auth_needauthenticate",
+      "apiservice_interceptor_auth_unaryauthenticate",
+      "apiservice_server_server",
+      "apiservice_server_server_go_context",
+      "apiservice_server_server_new",
+      "protos_api_api_grpc_pb_go_serviceregistrar",
+      "protos_api_api_grpc_pb_registerapiserver",
+      "server_server",
+      "server_server_createproject",
+      "server_server_createtask",
+      "server_server_getproject",
+      "server_server_listtasks",
+      "server_server_loginuser",
+      "server_server_registeruser"
+    ],
+    "5": [
+      "protos_user_user_grpc_pb",
+      "protos_user_user_grpc_pb_go_clientconninterface",
+      "protos_user_user_grpc_pb_go_context",
+      "protos_user_user_grpc_pb_go_serviceregistrar",
+      "protos_user_user_grpc_pb_go_unaryserverinterceptor",
+      "protos_user_user_grpc_pb_newusersvcclient",
+      "protos_user_user_grpc_pb_registerusersvcserver",
+      "protos_user_user_grpc_pb_usersvc_getuser_handler",
+      "protos_user_user_grpc_pb_usersvc_login_handler",
+      "protos_user_user_grpc_pb_usersvc_register_handler",
+      "protos_user_user_grpc_pb_usersvc_verify_handler",
+      "user_unimplementedusersvcserver",
+      "user_unimplementedusersvcserver_getuser",
+      "user_unimplementedusersvcserver_login",
+      "user_unimplementedusersvcserver_mustembedunimplementedusersvcserver",
+      "user_unimplementedusersvcserver_register",
+      "user_unimplementedusersvcserver_verify",
+      "user_unsafeusersvcserver",
+      "user_usersvcclient",
+      "user_usersvcclient_getuser",
+      "user_usersvcclient_login",
+      "user_usersvcclient_register",
+      "user_usersvcclient_verify",
+      "user_usersvcserver"
+    ],
+    "6": [
+      "apiservice_readme_grpc_gateway_generation",
+      "apiservice_www_swagger_ui_index_swagger_ui_page",
+      "apiservice_www_swagger_ui_oauth2_redirect_oauth2_redirect_handler",
+      "dc_api_gateway",
+      "dc_api_service",
+      "dc_frontend",
+      "dc_mongo",
+      "dc_mysql",
+      "dc_postgresql",
+      "dc_project_service",
+      "dc_task_service",
+      "dc_user_service",
+      "projectservice_readme_protobuf_import_fix",
+      "projectservice_requirements_mysqlclient",
+      "projectservice_requirements_sqlalchemy",
+      "readme_api_gateway_proxy",
+      "readme_api_service",
+      "readme_project_service",
+      "readme_task_service",
+      "readme_user_service",
+      "taskservice__rubocop_indentation_width_rule"
+    ],
+    "7": [
+      "bcrypt",
+      "grpc_grpc_js",
+      "grpc_proto_loader",
+      "jsonwebtoken",
+      "mongodb",
+      "userservice_package",
+      "userservice_package_author",
+      "userservice_package_dependencies",
+      "userservice_package_dependencies_bcrypt",
+      "userservice_package_dependencies_grpc_grpc_js",
+      "userservice_package_dependencies_grpc_proto_loader",
+      "userservice_package_dependencies_jsonwebtoken",
+      "userservice_package_dependencies_mongodb",
+      "userservice_package_description",
+      "userservice_package_license",
+      "userservice_package_main",
+      "userservice_package_name",
+      "userservice_package_scripts",
+      "userservice_package_scripts_start",
+      "userservice_package_scripts_test",
+      "userservice_package_version"
+    ],
+    "8": [
+      "project_projectsvcclient",
+      "project_projectsvcclient_createproject",
+      "project_projectsvcclient_createtag",
+      "project_projectsvcclient_getproject",
+      "project_projectsvcserver",
+      "project_unimplementedprojectsvcserver",
+      "project_unimplementedprojectsvcserver_createproject",
+      "project_unimplementedprojectsvcserver_createtag",
+      "project_unimplementedprojectsvcserver_getproject",
+      "project_unimplementedprojectsvcserver_mustembedunimplementedprojectsvcserver",
+      "project_unsafeprojectsvcserver",
+      "protos_project_project_grpc_pb",
+      "protos_project_project_grpc_pb_go_clientconninterface",
+      "protos_project_project_grpc_pb_go_context",
+      "protos_project_project_grpc_pb_go_serviceregistrar",
+      "protos_project_project_grpc_pb_go_unaryserverinterceptor",
+      "protos_project_project_grpc_pb_newprojectsvcclient",
+      "protos_project_project_grpc_pb_projectsvc_createproject_handler",
+      "protos_project_project_grpc_pb_projectsvc_createtag_handler",
+      "protos_project_project_grpc_pb_projectsvc_getproject_handler",
+      "protos_project_project_grpc_pb_registerprojectsvcserver"
+    ],
+    "9": [
+      "protos_task_task_grpc_pb",
+      "protos_task_task_grpc_pb_go_clientconninterface",
+      "protos_task_task_grpc_pb_go_context",
+      "protos_task_task_grpc_pb_go_serviceregistrar",
+      "protos_task_task_grpc_pb_go_unaryserverinterceptor",
+      "protos_task_task_grpc_pb_newtasksvcclient",
+      "protos_task_task_grpc_pb_registertasksvcserver",
+      "protos_task_task_grpc_pb_tasksvc_createtask_handler",
+      "protos_task_task_grpc_pb_tasksvc_listtasks_handler",
+      "protos_task_task_grpc_pb_tasksvc_updatetask_handler",
+      "task_tasksvcclient",
+      "task_tasksvcclient_createtask",
+      "task_tasksvcclient_listtasks",
+      "task_tasksvcclient_updatetask",
+      "task_tasksvcserver",
+      "task_unimplementedtasksvcserver",
+      "task_unimplementedtasksvcserver_createtask",
+      "task_unimplementedtasksvcserver_listtasks",
+      "task_unimplementedtasksvcserver_mustembedunimplementedtasksvcserver",
+      "task_unimplementedtasksvcserver_updatetask",
+      "task_unsafetasksvcserver"
+    ],
+    "10": [
+      "api_apiclient_loginuser",
+      "protos_user_user_pb_go_messagestate",
+      "protos_user_user_pb_go_sizecache",
+      "protos_user_user_pb_go_unknownfields",
+      "user_getuserrequest",
+      "user_getuserrequest_getuserid",
+      "user_getuserrequest_protomessage",
+      "user_getuserrequest_reset",
+      "user_getuserrequest_string",
+      "user_loginrequest",
+      "user_loginrequest_getemail",
+      "user_loginrequest_getpassword",
+      "user_loginrequest_protomessage",
+      "user_loginrequest_reset",
+      "user_loginrequest_string",
+      "user_verifyrequest",
+      "user_verifyrequest_gettoken",
+      "user_verifyrequest_protomessage",
+      "user_verifyrequest_reset",
+      "user_verifyrequest_string"
+    ],
+    "11": [
+      "api_apiclient_listtasks",
+      "protos_task_task_pb_go_sizecache",
+      "protos_task_task_pb_go_unknownfields",
+      "task_listtasksrequest",
+      "task_listtasksrequest_getassigneduserid",
+      "task_listtasksrequest_getprojectid",
+      "task_listtasksrequest_gettagid",
+      "task_listtasksrequest_protomessage",
+      "task_listtasksrequest_reset",
+      "task_listtasksrequest_string",
+      "task_listtasksresponse",
+      "task_listtasksresponse_gettasks",
+      "task_listtasksresponse_protomessage",
+      "task_listtasksresponse_reset",
+      "task_listtasksresponse_string",
+      "taskservice_testclient",
+      "taskservice_testclient_main"
+    ],
+    "12": [
+      "task_taskresponse",
+      "task_taskresponse_getassigneduserid",
+      "task_taskresponse_getid",
+      "task_taskresponse_getname",
+      "task_taskresponse_getprojectid",
+      "task_taskresponse_gettagid",
+      "task_taskresponse_getuserid",
+      "task_taskresponse_protomessage",
+      "task_taskresponse_reset",
+      "task_taskresponse_string",
+      "taskservice_api_task_api",
+      "taskservice_api_task_api_taskapi",
+      "taskservice_api_task_api_taskapi_create_task",
+      "taskservice_api_task_api_taskapi_initialize",
+      "taskservice_api_task_api_taskapi_list_tasks",
+      "taskservice_server",
+      "taskservice_server_main"
+    ],
+    "13": [
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_done_column",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_in_progress_column",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_kanban_board_layout",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_screen",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_tag_backend",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_tag_frontend",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_tag_infrastructure",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_task_dashboard_empty_states",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_task_migrate_user_table_postgresql",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_task_rate_limiting_auth_service",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_task_setup_initial_repository",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_task_terraform_staging_db",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_task_websockets_safari_fix",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_screen_todo_column"
+    ],
+    "14": [
+      "apiservice_cmd_proxy",
+      "apiservice_cmd_proxy_go_command",
+      "apiservice_cmd_proxy_go_context",
+      "apiservice_cmd_proxy_go_request",
+      "apiservice_cmd_proxy_init",
+      "apiservice_cmd_proxy_newgateway",
+      "apiservice_cmd_proxy_proxy",
+      "apiservice_cmd_proxy_serveswagger",
+      "handler",
+      "responsewriter"
+    ],
+    "15": [
+      "design_md_auth_screens_spec",
+      "design_md_dashboard_projects_spec",
+      "design_md_entities",
+      "design_md_project_detail_spec",
+      "frontend_dashboard_projects_page",
+      "frontend_design_stitch_modern_project_dashboard_authentication_code_login_register_mockup",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_code_projects_grid_mockup",
+      "frontend_design_stitch_modern_project_dashboard_project_details_tasks_code_kanban_mockup",
+      "frontend_index_login_page",
+      "frontend_project_task_management_page"
+    ],
+    "16": [
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_apiservice_health_card",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_cluster_cpu_usage_metric",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_cluster_memory_metric",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_live_tail_loki_panel",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_microops_sidebar_nav",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_projectservice_health_card",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_prometheus_grafana_loki_gke_stack",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_taskservice_health_card",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_screen_userservice_health_card"
+    ],
+    "17": [
+      "protos_task_task_pb_go_messagestate",
+      "task_createtaskrequest",
+      "task_createtaskrequest_getassigneduserid",
+      "task_createtaskrequest_getname",
+      "task_createtaskrequest_getprojectid",
+      "task_createtaskrequest_gettagid",
+      "task_createtaskrequest_getuserid",
+      "task_createtaskrequest_protomessage",
+      "task_createtaskrequest_reset",
+      "task_createtaskrequest_string"
+    ],
+    "18": [
+      "protos_user_user_pb",
+      "protos_user_user_pb_file_protos_user_user_proto_init",
+      "protos_user_user_pb_file_protos_user_user_proto_rawdescgzip",
+      "protos_user_user_pb_init",
+      "user_getuserrequest_descriptor",
+      "user_loginrequest_descriptor",
+      "user_registerrequest_descriptor",
+      "user_userresponse_descriptor",
+      "user_verifyrequest_descriptor",
+      "user_verifyresponse_descriptor"
+    ],
+    "19": [
+      "api_apiclient_updatetask",
+      "task_updatetaskrequest",
+      "task_updatetaskrequest_getassigneduserid",
+      "task_updatetaskrequest_gettagid",
+      "task_updatetaskrequest_gettaskid",
+      "task_updatetaskrequest_getuserid",
+      "task_updatetaskrequest_protomessage",
+      "task_updatetaskrequest_reset",
+      "task_updatetaskrequest_string"
+    ],
+    "20": [
+      "project_createprojectrequest_descriptor",
+      "project_createtagrequest_descriptor",
+      "project_getprojectrequest_descriptor",
+      "project_projectresponse_descriptor",
+      "project_tagresponse_descriptor",
+      "protos_project_project_pb",
+      "protos_project_project_pb_file_protos_project_project_proto_init",
+      "protos_project_project_pb_file_protos_project_project_proto_rawdescgzip",
+      "protos_project_project_pb_init"
+    ],
+    "21": [
+      "project_projectresponse_gettags",
+      "project_tagresponse",
+      "project_tagresponse_getid",
+      "project_tagresponse_getname",
+      "project_tagresponse_getprojectid",
+      "project_tagresponse_protomessage",
+      "project_tagresponse_reset",
+      "project_tagresponse_string",
+      "task_taskresponse_gettag"
+    ],
+    "22": [
+      "protos_task_task_pb",
+      "protos_task_task_pb_file_protos_task_task_proto_init",
+      "protos_task_task_pb_file_protos_task_task_proto_rawdescgzip",
+      "protos_task_task_pb_init",
+      "task_createtaskrequest_descriptor",
+      "task_listtasksrequest_descriptor",
+      "task_listtasksresponse_descriptor",
+      "task_taskresponse_descriptor",
+      "task_updatetaskrequest_descriptor"
+    ],
+    "23": [
+      "api_apiclient_createproject",
+      "project_createprojectrequest",
+      "project_createprojectrequest_getname",
+      "project_createprojectrequest_getuserid",
+      "project_createprojectrequest_protomessage",
+      "project_createprojectrequest_reset",
+      "project_createprojectrequest_string",
+      "protos_project_project_pb_go_unknownfields"
+    ],
+    "24": [
+      "api_apiclient_getproject",
+      "project_getprojectrequest",
+      "project_getprojectrequest_getprojectid",
+      "project_getprojectrequest_getuserid",
+      "project_getprojectrequest_protomessage",
+      "project_getprojectrequest_reset",
+      "project_getprojectrequest_string",
+      "protos_project_project_pb_go_sizecache"
+    ],
+    "25": [
+      "api_apiclient_registeruser",
+      "user_registerrequest",
+      "user_registerrequest_getemail",
+      "user_registerrequest_getname",
+      "user_registerrequest_getpassword",
+      "user_registerrequest_protomessage",
+      "user_registerrequest_reset",
+      "user_registerrequest_string"
+    ],
+    "26": [
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_active_tasks_status_indicator",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_admin_dashboard_card",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_core_api_service_card",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_create_new_project_action",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_card_grid",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_sidebar_navigation",
+      "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_user_db_cluster_card"
+    ],
+    "27": [
+      "project_createtagrequest",
+      "project_createtagrequest_getname",
+      "project_createtagrequest_getprojectid",
+      "project_createtagrequest_getuserid",
+      "project_createtagrequest_protomessage",
+      "project_createtagrequest_reset",
+      "project_createtagrequest_string",
+      "protos_project_project_pb_go_messagestate"
+    ],
+    "28": [
+      "task_taskresponse_getassigneduser",
+      "user_verifyresponse",
+      "user_verifyresponse_getemail",
+      "user_verifyresponse_getid",
+      "user_verifyresponse_getname",
+      "user_verifyresponse_protomessage",
+      "user_verifyresponse_reset",
+      "user_verifyresponse_string"
+    ],
+    "29": [
+      "user_userresponse",
+      "user_userresponse_getemail",
+      "user_userresponse_getid",
+      "user_userresponse_getname",
+      "user_userresponse_gettoken",
+      "user_userresponse_protomessage",
+      "user_userresponse_reset",
+      "user_userresponse_string"
+    ],
+    "30": [
+      "apiservice_build",
+      "apiservice_build_go111module",
+      "apiservice_build_sh__entry",
+      "apiservice_proxy",
+      "apiservice_proxy_sh__entry",
+      "apiservice_run",
+      "apiservice_run_sh__entry"
+    ],
+    "31": [
+      "design_md_accent_separation_rule",
+      "design_md_load_testing_spec",
+      "design_md_observability_spec",
+      "frontend_design_stitch_modern_project_dashboard_platform_load_testing_code_load_testing_mockup",
+      "frontend_design_stitch_modern_project_dashboard_platform_observability_code_observability_mockup",
+      "frontend_load_testing_page",
+      "frontend_observability_page"
+    ],
+    "32": [
+      "frontend_js_api",
+      "frontend_js_api_api",
+      "frontend_js_api_apifetch",
+      "frontend_js_api_projectcache",
+      "frontend_js_api_session",
+      "frontend_js_shell",
+      "frontend_js_shell_rendershell"
+    ],
+    "33": [
+      "project_projectresponse",
+      "project_projectresponse_getid",
+      "project_projectresponse_getname",
+      "project_projectresponse_protomessage",
+      "project_projectresponse_reset",
+      "project_projectresponse_string",
+      "task_taskresponse_getproject"
+    ],
+    "34": [
+      "protos_user_user_pb_go_message",
+      "user_getuserrequest_protoreflect",
+      "user_loginrequest_protoreflect",
+      "user_registerrequest_protoreflect",
+      "user_userresponse_protoreflect",
+      "user_verifyrequest_protoreflect",
+      "user_verifyresponse_protoreflect"
+    ],
+    "35": [
+      "frontend_design_stitch_modern_project_dashboard_authentication_screen_authenticate_action",
+      "frontend_design_stitch_modern_project_dashboard_authentication_screen_login_form",
+      "frontend_design_stitch_modern_project_dashboard_authentication_screen_login_screen",
+      "frontend_design_stitch_modern_project_dashboard_authentication_screen_microops_product",
+      "frontend_design_stitch_modern_project_dashboard_authentication_screen_post_v1_user_login",
+      "frontend_design_stitch_modern_project_dashboard_authentication_screen_register_tab"
+    ],
+    "36": [
+      "frontend_design_stitch_modern_project_dashboard_platform_load_testing_screen_latency_percentiles_metric",
+      "frontend_design_stitch_modern_project_dashboard_platform_load_testing_screen_live_telemetry_panel",
+      "frontend_design_stitch_modern_project_dashboard_platform_load_testing_screen_load_testing_screen",
+      "frontend_design_stitch_modern_project_dashboard_platform_load_testing_screen_payment_gateway_v2_service",
+      "frontend_design_stitch_modern_project_dashboard_platform_load_testing_screen_recent_runs_table",
+      "frontend_design_stitch_modern_project_dashboard_platform_load_testing_screen_test_configuration_panel"
+    ],
+    "37": [
+      "project_createprojectrequest_protoreflect",
+      "project_createtagrequest_protoreflect",
+      "project_getprojectrequest_protoreflect",
+      "project_projectresponse_protoreflect",
+      "project_tagresponse_protoreflect",
+      "protos_project_project_pb_go_message"
+    ],
+    "38": [
+      "protos_task_task_pb_go_message",
+      "task_createtaskrequest_protoreflect",
+      "task_listtasksrequest_protoreflect",
+      "task_listtasksresponse_protoreflect",
+      "task_taskresponse_protoreflect",
+      "task_updatetaskrequest_protoreflect"
+    ],
+    "39": [
+      "apiservice_cmd_root",
+      "apiservice_cmd_root_execute",
+      "apiservice_cmd_root_init",
+      "apiservice_main",
+      "apiservice_main_main"
+    ],
+    "40": [
+      "design_md_color_token_system",
+      "design_md_theme_dark_first",
+      "frontend_design_stitch_modern_project_dashboard_kinetic_infrastructure_design_dual_font_strategy",
+      "frontend_design_stitch_modern_project_dashboard_kinetic_infrastructure_design_kinetic_infrastructure_design_system",
+      "frontend_design_stitch_modern_project_dashboard_kinetic_infrastructure_design_tonal_layering_elevation"
+    ],
+    "41": [
+      "build",
+      "build_sh__entry",
+      "up",
+      "up_sh__entry"
+    ],
+    "42": [
+      "taskservice_proto_project_project_services_pb",
+      "taskservice_proto_project_project_services_pb_demoproject",
+      "taskservice_proto_project_project_services_pb_demoproject_projectsvc",
+      "taskservice_proto_project_project_services_pb_demoproject_projectsvc_service"
+    ],
+    "43": [
+      "taskservice_proto_task_task_services_pb",
+      "taskservice_proto_task_task_services_pb_demotask",
+      "taskservice_proto_task_task_services_pb_demotask_tasksvc",
+      "taskservice_proto_task_task_services_pb_demotask_tasksvc_service"
+    ],
+    "44": [
+      "taskservice_proto_user_user_services_pb",
+      "taskservice_proto_user_user_services_pb_demouser",
+      "taskservice_proto_user_user_services_pb_demouser_usersvc",
+      "taskservice_proto_user_user_services_pb_demouser_usersvc_service"
+    ],
+    "45": [
+      "apiservice_readme_protoc_go_generation",
+      "projectservice_requirements_grpcio",
+      "readme_grpc_transport_layer"
+    ],
+    "46": [
+      "protos_api_api_pb",
+      "protos_api_api_pb_file_protos_api_api_proto_init",
+      "protos_api_api_pb_init"
+    ],
+    "47": [
+      "run_local",
+      "run_local_path",
+      "run_local_sh__entry"
+    ],
+    "48": [
+      "frontend_js_theme",
+      "frontend_js_theme_toggletheme"
+    ],
+    "49": [
+      "license_sata_license",
+      "readme_license_section"
+    ],
+    "50": [
+      "pkg_github_com_joker666_microservice_demo_apiservice",
+      "pkg_github_com_joker666_microservice_demo_protos"
+    ],
+    "51": [
+      "stop_local",
+      "stop_local_sh__entry"
+    ],
+    "52": [
+      "taskservice_db_relations_tasks",
+      "taskservice_db_relations_tasks_tasks"
+    ],
+    "53": [
+      "taskservice_init",
+      "taskservice_init__entry"
+    ],
+    "54": [
+      "taskservice_proto_project_project_pb",
+      "taskservice_proto_project_project_pb_demoproject"
+    ],
+    "55": [
+      "taskservice_proto_task_task_pb",
+      "taskservice_proto_task_task_pb_demotask"
+    ],
+    "56": [
+      "taskservice_proto_user_user_pb",
+      "taskservice_proto_user_user_pb_demouser"
+    ],
+    "57": [
+      "apiservice_www_swagger_ui_favicon_16x16_png_favicon"
+    ],
+    "58": [
+      "apiservice_www_swagger_ui_favicon_32x32_favicon"
+    ],
+    "59": [
+      "frontend_50x_nginx_error_page"
+    ],
+    "60": [
+      "readme_jwt_authentication"
+    ],
+    "61": [
+      "taskservice_db_migrate_20201119125501_create_tasks"
+    ]
+  },
+  "cohesion": {
+    "0": 0.059800664451827246,
+    "1": 0.06190476190476191,
+    "2": 0.3068181818181818,
+    "3": 0.14814814814814814,
+    "4": 0.13768115942028986,
+    "5": 0.15942028985507245,
+    "6": 0.13333333333333333,
+    "7": 0.09523809523809523,
+    "8": 0.17142857142857143,
+    "9": 0.17142857142857143,
+    "10": 0.12105263157894737,
+    "11": 0.1323529411764706,
+    "12": 0.125,
+    "13": 0.18681318681318682,
+    "14": 0.2222222222222222,
+    "15": 0.26666666666666666,
+    "16": 0.28888888888888886,
+    "17": 0.2,
+    "18": 0.2222222222222222,
+    "19": 0.2222222222222222,
+    "20": 0.25,
+    "21": 0.2222222222222222,
+    "22": 0.25,
+    "23": 0.25,
+    "24": 0.25,
+    "25": 0.25,
+    "26": 0.32142857142857145,
+    "27": 0.25,
+    "28": 0.25,
+    "29": 0.25,
+    "30": 0.2857142857142857,
+    "31": 0.42857142857142855,
+    "32": 0.2857142857142857,
+    "33": 0.2857142857142857,
+    "34": 0.2857142857142857,
+    "35": 0.3333333333333333,
+    "36": 0.4666666666666667,
+    "37": 0.3333333333333333,
+    "38": 0.3333333333333333,
+    "39": 0.4,
+    "40": 0.4,
+    "41": 0.5,
+    "42": 0.5,
+    "43": 0.5,
+    "44": 0.5,
+    "45": 0.6666666666666666,
+    "46": 1.0,
+    "47": 0.6666666666666666,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0,
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0
+  },
+  "gods": [
+    {
+      "id": "task_taskresponse",
+      "label": "TaskResponse",
+      "degree": 34
+    },
+    {
+      "id": "project_projectresponse",
+      "label": "ProjectResponse",
+      "degree": 25
+    },
+    {
+      "id": "user_userresponse",
+      "label": "UserResponse",
+      "degree": 23
+    },
+    {
+      "id": "api_apiclient",
+      "label": "APIClient",
+      "degree": 20
+    },
+    {
+      "id": "task_createtaskrequest",
+      "label": "CreateTaskRequest",
+      "degree": 19
+    },
+    {
+      "id": "project_tagresponse",
+      "label": "TagResponse",
+      "degree": 18
+    },
+    {
+      "id": "task_listtasksrequest",
+      "label": "ListTasksRequest",
+      "degree": 18
+    },
+    {
+      "id": "user_verifyresponse",
+      "label": "VerifyResponse",
+      "degree": 18
+    },
+    {
+      "id": "project_getprojectrequest",
+      "label": "GetProjectRequest",
+      "degree": 17
+    },
+    {
+      "id": "task_updatetaskrequest",
+      "label": "UpdateTaskRequest",
+      "degree": 17
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Kinetic Infrastructure design system (colors, typography, elevation)",
+      "target": "Frontend color token system",
+      "source_files": [
+        "frontend-design/stitch_modern_project_dashboard/kinetic_infrastructure/DESIGN.md",
+        "design.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "newGateway()",
+      "target": "RegisterAPIHandlerFromEndpoint()",
+      "source_files": [
+        "apiService/cmd/proxy.go",
+        "protos/api/api.pb.gw.go"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "serve()",
+      "target": "NewProjectSvcClient()",
+      "source_files": [
+        "apiService/cmd/serve.go",
+        "protos/project/project_grpc.pb.go"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "serve()",
+      "target": "NewTaskSvcClient()",
+      "source_files": [
+        "apiService/cmd/serve.go",
+        "protos/task/task_grpc.pb.go"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "serve()",
+      "target": "NewUserSvcClient()",
+      "source_files": [
+        "apiService/cmd/serve.go",
+        "protos/user/user_grpc.pb.go"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `TaskResponse` connect `Community 12` to `Community 33`, `Community 3`, `Community 4`, `Community 38`, `Community 9`, `Community 11`, `Community 17`, `Community 19`, `Community 21`, `Community 22`, `Community 28`?",
+      "why": "High betweenness centrality (0.156) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `TaskApi` connect `Community 12` to `Community 0`?",
+      "why": "High betweenness centrality (0.131) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `APIClient` connect `Community 2` to `Community 3`, `Community 10`, `Community 11`, `Community 19`, `Community 23`, `Community 24`, `Community 25`?",
+      "why": "High betweenness centrality (0.088) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `GO111MODULE`, `github.com/Joker666/microservice-demo/apiService`, `ProjectCache` to the rest of the system?",
+      "why": "73 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.059800664451827246 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06190476190476191 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 3` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14814814814814814 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MicroOps - Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;450&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2e3037",
+                        "tertiary-fixed": "#dee2f1",
+                        "surface-variant": "#32353c",
+                        "surface-container-highest": "#32353c",
+                        "error": "#ffb4ab",
+                        "secondary": "#5de6ff",
+                        "on-primary-container": "#0d0096",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#8c909e",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-surface": "#e1e2eb",
+                        "secondary-fixed": "#a2eeff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-error": "#690005",
+                        "primary": "#c0c1ff",
+                        "tertiary-fixed-dim": "#c2c6d4",
+                        "on-secondary": "#00363e",
+                        "tertiary": "#c2c6d4",
+                        "outline": "#908fa0",
+                        "surface-tint": "#c0c1ff",
+                        "inverse-primary": "#494bd6",
+                        "on-primary": "#1000a9",
+                        "on-background": "#e1e2eb",
+                        "on-secondary-fixed": "#001f25",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-fixed": "#171c26",
+                        "on-tertiary-container": "#252a35",
+                        "on-secondary-container": "#00515d",
+                        "surface-bright": "#363940",
+                        "primary-fixed": "#e1e0ff",
+                        "background": "#10131a",
+                        "surface-dim": "#10131a",
+                        "primary-container": "#8083ff",
+                        "secondary-container": "#00cbe6",
+                        "on-tertiary": "#2b303b",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "outline-variant": "#464554",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface": "#10131a",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "surface-container-high": "#272a31",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary-fixed-variant": "#424752",
+                        "surface-container-low": "#191c22",
+                        "surface-container": "#1d2026",
+                        "on-primary-fixed": "#07006c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "code-md": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "code-sm": ["12px", { "lineHeight": "18px", "fontWeight": "450" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle glow for interactive elements */
+        .glow-hover:hover {
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+        }
+        
+        /* Modal backdrop blur */
+        .modal-backdrop {
+            backdrop-filter: blur(8px);
+            background-color: rgba(11, 14, 20, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col md:flex-row">
+<!-- TopNavBar (Mobile) -->
+<header class="md:hidden w-full h-16 flex items-center bg-surface border-b border-outline-variant px-lg flex justify-between items-center w-full">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">hexagon</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">MicroOps</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:scale-95" data-icon="dark_mode">dark_mode</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:scale-95" data-icon="notifications">notifications</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant cursor-pointer active:scale-95" data-alt="A small, circular avatar image of a developer in a dimly lit server room. The image should be highly detailed, focusing on the person's face, conveying a sense of focus and expertise within a modern tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5W-xakBB29Jhz67_PBh-iQw3p58a3hOrWDbhdxfSiEkqUsIfmbIJKo0vBV7yjwRufPv9rrhz9r2WsNkNgLbY-YLvMuZkj_D4IcP3ZMnAGkL2GV0BcoiVCuyWh5vWpgZCrz35FXFyHBNq34Bz614cBE5deLeDsOsHVUYNnesTTi7MOtaSuj-hO8U81dA3wxK7Vs7UXZwiGrh9bLs38BkcAGpG71dMhwjHDhEklEUWgiVXMOhX3nmH6dQ"/>
+</div>
+</header>
+<!-- SideNavBar (Web) -->
+<aside class="hidden md:flex h-screen w-64 flex-col border-r border-outline-variant bg-surface-container-low shrink-0">
+<div class="p-md flex items-center gap-sm border-b border-outline-variant pb-md mb-md">
+<img alt="Project Logo" class="w-10 h-10 rounded-lg" data-alt="A stylized, geometric logo for 'Project Alpha' featuring sharp angles and a cool color palette of indigos and cyans. It should look like a modern, high-tech emblem suitable for a cutting-edge developer tool or cloud platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZhfWAw3FnWpNKVLQ5y0ZwwVPzJXFFGkYw9xnh7nxLM9fpH8F4g5DN_fRoZLwvvTjF0f69104a8uJHzWM1B5sZ0j_kY4jvq-NzI-HyvWCbkA878rhTInt6VM_yrBIx8F18_PypKvFR4QfLi3tP_G3d_c8vVkSnIWnxKimg633kwH18zHO4yG9Vw20Cq9ODjiRJzQXFBpwKXYEzsfPju1z-VUy_Mu-PY67azwSr0XWZhrBqdpO17j-KTg"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary">Project Alpha</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Production Cluster</p>
+</div>
+</div>
+<nav class="flex flex-col flex-1 p-md gap-sm">
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg bg-primary-container text-on-primary-container transition-all duration-200 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="folder_managed">folder_managed</span>
+<span class="font-label-caps text-label-caps">Projects</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="speed">speed</span>
+<span class="font-label-caps text-label-caps">Load Testing</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-caps text-label-caps">Observability</span>
+</a>
+</nav>
+<div class="p-md mt-auto">
+<button class="w-full py-sm bg-primary text-on-primary font-label-caps text-label-caps rounded-lg flex items-center justify-center gap-sm hover:bg-primary-container transition-colors duration-200 cursor-pointer active:scale-95 glow-hover" onclick="openModal()">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                New Project
+            </button>
+</div>
+<div class="border-t border-outline-variant p-md mt-sm flex flex-col gap-sm">
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-caps text-label-caps">Support</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out cursor-pointer active:scale-95 mt-sm border border-outline-variant border-dashed" href="#">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+<span class="font-label-caps text-label-caps">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto w-full relative">
+<!-- Top Nav Bar (Desktop specific actions) -->
+<div class="hidden md:flex h-16 items-center justify-end px-lg bg-surface border-b border-outline-variant shrink-0 gap-sm sticky top-0 z-10">
+<div class="flex bg-surface-container-low rounded-full px-sm py-xs border border-outline-variant items-center gap-sm focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">search</span>
+<input class="bg-transparent border-none text-body-md font-body-md text-on-surface focus:ring-0 w-48 placeholder:text-on-surface-variant/50 h-8" placeholder="Search resources..." type="text"/>
+</div>
+<div class="w-[1px] h-6 bg-outline-variant mx-sm"></div>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant mx-sm"></div>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant cursor-pointer active:scale-95 ml-xs" data-alt="A small, circular avatar image of a developer in a dimly lit server room. The image should be highly detailed, focusing on the person's face, conveying a sense of focus and expertise within a modern tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0hRer4UlelbCSGmpJBAITcPdLS1-1vnwM4igK_H-0DTpc-FJNR08i0aTGjkfa9laPpvqaAKbasvu4IgKnNuGL2FdxCxzQNY0ztLKPD_zVc3QpT50lZb7sW_hkVT1QQFvvgY-N3G8nnNj4MEVd-eRYgupOkVLYzKajN4qzDUniuc7Z5owHVzUGF9t9bPQmPEhkNn-IWGepikuegNBYEzUWfLG5Y1icNzrlE2HRI4lBUOrOC2fZfGNwQw"/>
+</div>
+<!-- Canvas -->
+<div class="p-lg md:p-xl max-w-7xl mx-auto w-full flex-1">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Projects</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and monitor your deployed services.</p>
+</div>
+<div class="hidden md:flex gap-sm">
+<button class="px-md py-sm bg-surface-container border border-outline-variant rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="px-md py-sm bg-primary text-on-primary font-body-md text-body-md font-semibold rounded-lg flex items-center gap-sm hover:bg-primary-container transition-colors cursor-pointer active:scale-95 glow-hover" onclick="openModal()">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        New Project
+                    </button>
+</div>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-md flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center border border-primary/20 text-primary">
+<span class="material-symbols-outlined">api</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Core API Service</h3>
+<div class="flex items-center gap-xs mt-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">v2.4.1</span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-xs rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1"></div>
+<div class="grid grid-cols-2 gap-sm border-t border-outline-variant pt-sm mt-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Tags</span>
+<div class="flex flex-wrap gap-xs">
+<span class="px-xs py-[2px] bg-surface-container-high rounded text-on-surface font-code-sm text-code-sm border border-outline-variant">prod</span>
+<span class="px-xs py-[2px] bg-surface-container-high rounded text-on-surface font-code-sm text-code-sm border border-outline-variant">backend</span>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Active Tasks</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="font-code-md text-code-md text-on-surface">12 / 12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-md flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-md bg-secondary/10 flex items-center justify-center border border-secondary/20 text-secondary">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">User DB Cluster</h3>
+<div class="flex items-center gap-xs mt-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">v1.1.0</span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-xs rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1"></div>
+<div class="grid grid-cols-2 gap-sm border-t border-outline-variant pt-sm mt-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Tags</span>
+<div class="flex flex-wrap gap-xs">
+<span class="px-xs py-[2px] bg-surface-container-high rounded text-on-surface font-code-sm text-code-sm border border-outline-variant">data</span>
+<span class="px-xs py-[2px] bg-error/10 rounded text-error font-code-sm text-code-sm border border-error/30">alert</span>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Active Tasks</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-error text-[16px]">warning</span>
+<span class="font-code-md text-code-md text-error">3 / 8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-md flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-md bg-tertiary-container/10 flex items-center justify-center border border-tertiary-container/20 text-tertiary-container">
+<span class="material-symbols-outlined">front_hand</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Admin Dashboard</h3>
+<div class="flex items-center gap-xs mt-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">v3.0.1</span>
+</div>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-xs rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1"></div>
+<div class="grid grid-cols-2 gap-sm border-t border-outline-variant pt-sm mt-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Tags</span>
+<div class="flex flex-wrap gap-xs">
+<span class="px-xs py-[2px] bg-surface-container-high rounded text-on-surface font-code-sm text-code-sm border border-outline-variant">frontend</span>
+<span class="px-xs py-[2px] bg-surface-container-high rounded text-on-surface font-code-sm text-code-sm border border-outline-variant">internal</span>
+</div>
+</div>
+<div class="flex flex-col items-end justify-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Active Tasks</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="font-code-md text-code-md text-on-surface">5 / 5</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Add New Placeholder -->
+<div class="bg-surface-container-low border border-outline-variant border-dashed rounded-lg p-md flex flex-col items-center justify-center hover:bg-surface-container-highest hover:border-primary/50 transition-colors cursor-pointer group min-h-[200px]" onclick="openModal()">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-sm group-hover:bg-primary/10 group-hover:text-primary transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant group-hover:text-primary transition-colors">Create New Project</span>
+</div>
+</div>
+</div>
+</main>
+<!-- New Project Modal -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center modal-backdrop p-md" id="newProjectModal">
+<div class="bg-surface border border-outline-variant rounded-lg shadow-2xl w-full max-w-md flex flex-col" onclick="event.stopPropagation()">
+<!-- Header -->
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">New Project</h2>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Body -->
+<form class="p-lg flex flex-col gap-md" id="createProjectForm">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="projectName">Project Name</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded px-sm py-xs font-code-md text-code-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="projectName" name="name" placeholder="e.g. payment-gateway" required="" type="text"/>
+<p class="font-code-sm text-code-sm text-on-surface-variant/70 mt-xs">Use lowercase alphanumeric and dashes.</p>
+</div>
+</form>
+<!-- Footer -->
+<div class="px-lg py-md border-t border-outline-variant flex justify-end gap-sm bg-surface-container-low rounded-b-lg">
+<button class="px-md py-sm bg-transparent border border-outline-variant rounded text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors" onclick="closeModal()" type="button">Cancel</button>
+<button class="px-md py-sm bg-primary text-on-primary font-body-md text-body-md font-semibold rounded hover:bg-primary-container transition-colors flex items-center gap-xs glow-hover" form="createProjectForm" type="submit">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                    Create Project
+                </button>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Mobile Only) -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary-container transition-colors z-40 active:scale-95 glow-hover" onclick="openModal()">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+<script>
+        const modal = document.getElementById('newProjectModal');
+        const form = document.getElementById('createProjectForm');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            // Auto focus input
+            setTimeout(() => {
+                document.getElementById('projectName').focus();
+            }, 100);
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            form.reset();
+        }
+
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Handle form submission (Mock POST)
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const projectName = formData.get('name');
+            
+            // Mock API Call
+            console.log(`POST /v1/project/create: { "name": "${projectName}" }`);
+            
+            // Provide visual feedback
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Creating...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                closeModal();
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+                // Ideally append new project card here
+            }, 800);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MicroOps - Authentication</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;450&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2e3037",
+                        "tertiary-fixed": "#dee2f1",
+                        "surface-variant": "#32353c",
+                        "surface-container-highest": "#32353c",
+                        "error": "#ffb4ab",
+                        "secondary": "#5de6ff",
+                        "on-primary-container": "#0d0096",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#8c909e",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-surface": "#e1e2eb",
+                        "secondary-fixed": "#a2eeff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-error": "#690005",
+                        "primary": "#c0c1ff",
+                        "tertiary-fixed-dim": "#c2c6d4",
+                        "on-secondary": "#00363e",
+                        "tertiary": "#c2c6d4",
+                        "outline": "#908fa0",
+                        "surface-tint": "#c0c1ff",
+                        "inverse-primary": "#494bd6",
+                        "on-primary": "#1000a9",
+                        "on-background": "#e1e2eb",
+                        "on-secondary-fixed": "#001f25",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-fixed": "#171c26",
+                        "on-tertiary-container": "#252a35",
+                        "on-secondary-container": "#00515d",
+                        "surface-bright": "#363940",
+                        "primary-fixed": "#e1e0ff",
+                        "background": "#10131a",
+                        "surface-dim": "#10131a",
+                        "primary-container": "#8083ff",
+                        "secondary-container": "#00cbe6",
+                        "on-tertiary": "#2b303b",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "outline-variant": "#464554",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface": "#10131a",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "surface-container-high": "#272a31",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary-fixed-variant": "#424752",
+                        "surface-container-low": "#191c22",
+                        "surface-container": "#1d2026",
+                        "on-primary-fixed": "#07006c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "code-md": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "code-sm": ["12px", { "lineHeight": "18px", "fontWeight": "450" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glowing-bg {
+            background: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.15), transparent 70%);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen flex items-center justify-center font-body-md relative overflow-hidden">
+<!-- Atmospheric Background -->
+<div class="absolute inset-0 z-0 pointer-events-none glowing-bg"></div>
+<div class="relative z-10 w-full max-w-md px-md">
+<!-- Brand Header -->
+<div class="text-center mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-primary flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                MicroOps
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Platform Engineering Portal</p>
+</div>
+<!-- Auth Card -->
+<div class="bg-surface rounded-lg border border-outline-variant p-lg shadow-[0_4px_24px_rgba(0,0,0,0.4)] relative">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant mb-lg">
+<button class="flex-1 pb-sm font-label-caps text-label-caps text-primary border-b-2 border-primary transition-colors hover:bg-surface-container-high" id="tab-login" onclick="switchTab('login')">
+                    LOGIN
+                </button>
+<button class="flex-1 pb-sm font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent transition-colors hover:text-on-surface hover:bg-surface-container-high" id="tab-register" onclick="switchTab('register')">
+                    REGISTER
+                </button>
+</div>
+<!-- Login Content -->
+<div class="tab-content active" id="content-login">
+<form class="flex flex-col gap-md">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded p-sm font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors placeholder:text-on-surface-variant/50" placeholder="admin@microops.local" type="email"/>
+</div>
+<div>
+<div class="flex justify-between items-center mb-xs">
+<label class="block font-label-caps text-label-caps text-on-surface-variant">Password</label>
+<a class="font-label-caps text-label-caps text-primary hover:text-primary-fixed transition-colors" href="#">Forgot?</a>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded p-sm font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors" placeholder="••••••••" type="password"/>
+</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/70 mt-xs mb-sm p-sm bg-surface-container-low rounded border border-outline-variant/50">
+<span class="text-tertiary">POST</span> /v1/user/login
+                    </div>
+<button class="w-full bg-[#6366F1] text-white font-headline-sm text-headline-sm rounded py-sm px-md hover:bg-inverse-primary transition-colors flex items-center justify-center gap-sm" type="button">
+                        Authenticate <span class="material-symbols-outlined text-[18px]">login</span>
+</button>
+</form>
+</div>
+<!-- Register Content -->
+<div class="tab-content" id="content-register">
+<form class="flex flex-col gap-md">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded p-sm font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors placeholder:text-on-surface-variant/50" placeholder="Jane Doe" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded p-sm font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors placeholder:text-on-surface-variant/50" placeholder="jane@microops.local" type="email"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Password</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded p-sm font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors" placeholder="••••••••" type="password"/>
+</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/70 mt-xs mb-sm p-sm bg-surface-container-low rounded border border-outline-variant/50">
+<span class="text-secondary">POST</span> /v1/user/register
+                    </div>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface font-headline-sm text-headline-sm rounded py-sm px-md hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-sm" type="button">
+                        Create Account <span class="material-symbols-outlined text-[18px]">person_add</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Footer links -->
+<div class="text-center mt-lg font-body-md text-body-md text-on-surface-variant flex justify-center gap-md">
+<a class="hover:text-primary transition-colors" href="#">Documentation</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">System Status</a>
+</div>
+</div>
+<script>
+        function switchTab(tab) {
+            // Reset tabs
+            document.getElementById('tab-login').className = "flex-1 pb-sm font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent transition-colors hover:text-on-surface hover:bg-surface-container-high";
+            document.getElementById('tab-register').className = "flex-1 pb-sm font-label-caps text-label-caps text-on-surface-variant border-b-2 border-transparent transition-colors hover:text-on-surface hover:bg-surface-container-high";
+            
+            // Hide contents
+            document.getElementById('content-login').classList.remove('active');
+            document.getElementById('content-register').classList.remove('active');
+
+            // Activate selected
+            document.getElementById('tab-' + tab).className = "flex-1 pb-sm font-label-caps text-label-caps text-primary border-b-2 border-primary transition-colors hover:bg-surface-container-high";
+            document.getElementById('content-' + tab).classList.add('active');
+        }
+    </script>
+</body></html>

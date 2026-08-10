@@ -1,0 +1,1 @@
+{"nodes": [{"id": "$graphify-root$_taskservice_db_migrate_20201119125501_create_tasks_rb", "label": "20201119125501_create_tasks.rb", "file_type": "code", "source_file": "taskService/db/migrate/20201119125501_create_tasks.rb", "source_location": "L1"}], "edges": [], "raw_calls": []}

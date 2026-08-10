@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MicroOps - Observability</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "rgb(var(--inverse-on-surface) / <alpha-value>)",
+                        "tertiary-fixed": "rgb(var(--tertiary-fixed) / <alpha-value>)",
+                        "surface-variant": "rgb(var(--surface-variant) / <alpha-value>)",
+                        "surface-container-highest": "rgb(var(--surface-container-highest) / <alpha-value>)",
+                        "error": "rgb(var(--error) / <alpha-value>)",
+                        "secondary": "rgb(var(--secondary) / <alpha-value>)",
+                        "on-primary-container": "rgb(var(--on-primary-container) / <alpha-value>)",
+                        "on-error-container": "rgb(var(--on-error-container) / <alpha-value>)",
+                        "tertiary-container": "rgb(var(--tertiary-container) / <alpha-value>)",
+                        "on-primary-fixed-variant": "rgb(var(--on-primary-fixed-variant) / <alpha-value>)",
+                        "on-surface": "rgb(var(--on-surface) / <alpha-value>)",
+                        "secondary-fixed": "rgb(var(--secondary-fixed) / <alpha-value>)",
+                        "on-surface-variant": "rgb(var(--on-surface-variant) / <alpha-value>)",
+                        "on-error": "rgb(var(--on-error) / <alpha-value>)",
+                        "primary": "rgb(var(--primary) / <alpha-value>)",
+                        "tertiary-fixed-dim": "rgb(var(--tertiary-fixed-dim) / <alpha-value>)",
+                        "on-secondary": "rgb(var(--on-secondary) / <alpha-value>)",
+                        "tertiary": "rgb(var(--tertiary) / <alpha-value>)",
+                        "outline": "rgb(var(--outline) / <alpha-value>)",
+                        "surface-tint": "rgb(var(--surface-tint) / <alpha-value>)",
+                        "inverse-primary": "rgb(var(--inverse-primary) / <alpha-value>)",
+                        "on-primary": "rgb(var(--on-primary) / <alpha-value>)",
+                        "on-background": "rgb(var(--on-background) / <alpha-value>)",
+                        "on-secondary-fixed": "rgb(var(--on-secondary-fixed) / <alpha-value>)",
+                        "inverse-surface": "rgb(var(--inverse-surface) / <alpha-value>)",
+                        "on-tertiary-fixed": "rgb(var(--on-tertiary-fixed) / <alpha-value>)",
+                        "on-tertiary-container": "rgb(var(--on-tertiary-container) / <alpha-value>)",
+                        "on-secondary-container": "rgb(var(--on-secondary-container) / <alpha-value>)",
+                        "surface-bright": "rgb(var(--surface-bright) / <alpha-value>)",
+                        "primary-fixed": "rgb(var(--primary-fixed) / <alpha-value>)",
+                        "background": "rgb(var(--background) / <alpha-value>)",
+                        "surface-dim": "rgb(var(--surface-dim) / <alpha-value>)",
+                        "primary-container": "rgb(var(--primary-container) / <alpha-value>)",
+                        "secondary-container": "rgb(var(--secondary-container) / <alpha-value>)",
+                        "on-tertiary": "rgb(var(--on-tertiary) / <alpha-value>)",
+                        "on-secondary-fixed-variant": "rgb(var(--on-secondary-fixed-variant) / <alpha-value>)",
+                        "outline-variant": "rgb(var(--outline-variant) / <alpha-value>)",
+                        "error-container": "rgb(var(--error-container) / <alpha-value>)",
+                        "surface-container-lowest": "rgb(var(--surface-container-lowest) / <alpha-value>)",
+                        "surface": "rgb(var(--surface) / <alpha-value>)",
+                        "secondary-fixed-dim": "rgb(var(--secondary-fixed-dim) / <alpha-value>)",
+                        "surface-container-high": "rgb(var(--surface-container-high) / <alpha-value>)",
+                        "primary-fixed-dim": "rgb(var(--primary-fixed-dim) / <alpha-value>)",
+                        "on-tertiary-fixed-variant": "rgb(var(--on-tertiary-fixed-variant) / <alpha-value>)",
+                        "surface-container-low": "rgb(var(--surface-container-low) / <alpha-value>)",
+                        "surface-container": "rgb(var(--surface-container) / <alpha-value>)",
+                        "on-primary-fixed": "rgb(var(--on-primary-fixed) / <alpha-value>)"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "code-md": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "code-sm": ["12px", { "lineHeight": "18px", "fontWeight": "450" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #191c22;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #464554;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #908fa0;
+        }
+        
+        .log-entry:hover {
+            background-color: #272a31;
+        }
+    </style>
+
+<style id="theme-vars">
+    :root {
+        --inverse-on-surface: 241 242 244;
+            --tertiary-fixed: 227 228 232;
+            --surface-variant: 227 228 232;
+            --surface-container-highest: 227 228 232;
+            --error: 220 38 38;
+            --secondary: 8 145 168;
+            --on-primary-container: 30 27 75;
+            --on-error-container: 127 29 29;
+            --tertiary-container: 227 228 232;
+            --on-primary-fixed-variant: 79 70 229;
+            --on-surface: 18 21 28;
+            --secondary-fixed: 207 247 255;
+            --on-surface-variant: 75 81 99;
+            --on-error: 255 255 255;
+            --primary: 79 70 229;
+            --tertiary-fixed-dim: 194 198 212;
+            --on-secondary: 255 255 255;
+            --tertiary: 91 100 114;
+            --outline: 107 114 128;
+            --surface-tint: 79 70 229;
+            --inverse-primary: 192 193 255;
+            --on-primary: 255 255 255;
+            --on-background: 18 21 28;
+            --on-secondary-fixed: 0 59 68;
+            --inverse-surface: 18 21 28;
+            --on-tertiary-fixed: 30 34 43;
+            --on-tertiary-container: 30 34 43;
+            --on-secondary-container: 0 59 68;
+            --surface-bright: 255 255 255;
+            --primary-fixed: 224 225 255;
+            --background: 247 248 250;
+            --surface-dim: 227 228 232;
+            --primary-container: 224 225 255;
+            --secondary-container: 207 247 255;
+            --on-tertiary: 255 255 255;
+            --on-secondary-fixed-variant: 8 145 168;
+            --outline-variant: 215 217 222;
+            --error-container: 254 226 226;
+            --surface-container-lowest: 255 255 255;
+            --surface: 255 255 255;
+            --secondary-fixed-dim: 93 230 255;
+            --surface-container-high: 235 236 239;
+            --primary-fixed-dim: 192 193 255;
+            --on-tertiary-fixed-variant: 67 75 89;
+            --surface-container-low: 247 248 250;
+            --surface-container: 241 242 244;
+            --on-primary-fixed: 30 27 75;
+    }
+    html.dark {
+        --inverse-on-surface: 46 48 55;
+            --tertiary-fixed: 222 226 241;
+            --surface-variant: 50 53 60;
+            --surface-container-highest: 50 53 60;
+            --error: 255 180 171;
+            --secondary: 93 230 255;
+            --on-primary-container: 13 0 150;
+            --on-error-container: 255 218 214;
+            --tertiary-container: 140 144 158;
+            --on-primary-fixed-variant: 47 46 190;
+            --on-surface: 225 226 235;
+            --secondary-fixed: 162 238 255;
+            --on-surface-variant: 199 196 215;
+            --on-error: 105 0 5;
+            --primary: 192 193 255;
+            --tertiary-fixed-dim: 194 198 212;
+            --on-secondary: 0 54 62;
+            --tertiary: 194 198 212;
+            --outline: 144 143 160;
+            --surface-tint: 192 193 255;
+            --inverse-primary: 73 75 214;
+            --on-primary: 16 0 169;
+            --on-background: 225 226 235;
+            --on-secondary-fixed: 0 31 37;
+            --inverse-surface: 225 226 235;
+            --on-tertiary-fixed: 23 28 38;
+            --on-tertiary-container: 37 42 53;
+            --on-secondary-container: 0 81 93;
+            --surface-bright: 54 57 64;
+            --primary-fixed: 225 224 255;
+            --background: 16 19 26;
+            --surface-dim: 16 19 26;
+            --primary-container: 128 131 255;
+            --secondary-container: 0 203 230;
+            --on-tertiary: 43 48 59;
+            --on-secondary-fixed-variant: 0 78 90;
+            --outline-variant: 70 69 84;
+            --error-container: 147 0 10;
+            --surface-container-lowest: 11 14 20;
+            --surface: 16 19 26;
+            --secondary-fixed-dim: 47 217 244;
+            --surface-container-high: 39 42 49;
+            --primary-fixed-dim: 192 193 255;
+            --on-tertiary-fixed-variant: 66 71 82;
+            --surface-container-low: 25 28 34;
+            --surface-container: 29 32 38;
+            --on-primary-fixed: 7 0 108;
+    }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md m-0 p-0 overflow-hidden flex h-screen">
+<!-- SideNavBar from JSON -->
+<nav aria-label="Main Navigation" class="hidden md:flex h-screen w-64 flex-col border-r border-outline-variant bg-surface-container-low shrink-0">
+<div class="p-md border-b border-outline-variant flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-xl">layers</span>
+</div>
+<div class="overflow-hidden">
+<h1 class="font-headline-sm text-headline-sm text-primary truncate">Project Alpha</h1>
+<p class="text-on-surface-variant font-label-caps text-label-caps truncate">Production Cluster</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-md flex flex-col gap-sm custom-scrollbar">
+<!-- Tabs -->
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps" href="dashboard.html">
+<span class="material-symbols-outlined">folder_managed</span>
+                Projects
+            </a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps" href="load-testing.html">
+<span class="material-symbols-outlined">speed</span>
+                Load Testing
+            </a>
+<a aria-current="page" class="flex items-center gap-sm px-md py-sm rounded-lg bg-primary-container text-on-primary-container transition-all duration-200 ease-in-out font-label-caps text-label-caps" href="observability.html">
+<span class="material-symbols-outlined">monitoring</span>
+                Observability
+            </a>
+<!-- CTA -->
+<div class="mt-lg">
+<button onclick="location.href=&#39;dashboard.html&#39;" class="w-full flex items-center justify-center gap-sm px-md py-sm bg-primary text-on-primary rounded-lg font-label-caps text-label-caps hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                    New Project
+                </button>
+</div>
+</div>
+<div class="p-md border-t border-outline-variant flex flex-col gap-sm mt-auto">
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined text-lg">help</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar from JSON -->
+<header class="w-full h-16 flex items-center justify-between px-lg border-b border-outline-variant bg-surface shrink-0">
+<div class="flex items-center gap-md">
+<button class="md:hidden text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">MicroOps</div>
+</div>
+<div class="flex-1 max-w-md mx-lg hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full bg-surface-container-high border-outline-variant border text-on-surface rounded-full py-2 pl-10 pr-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-body-md text-body-md placeholder-on-surface-variant" placeholder="Search services, traces, logs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button onclick="toggleTheme()" class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full transition-colors cursor-pointer active:scale-95" title="Dark Mode">
+<span class="material-symbols-outlined theme-toggle-icon">dark_mode</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-full transition-colors cursor-pointer active:scale-95 relative" title="Notifications">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-6 w-px bg-outline-variant mx-sm hidden sm:block"></div>
+<button class="hidden sm:flex items-center gap-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high px-3 py-1.5 rounded-lg transition-colors cursor-pointer active:scale-95 font-body-md text-body-md" onclick="Session.clear(); location.href=&#39;index.html&#39;">
+                    Logout
+                </button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden shrink-0 ml-xs">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Yveu2ekEq1OugEl3POxnY-WduAQ93azjUyecHvqH89RduzoA7GcM7-N2wWbKLG35yf2GloXC2odQpj8SYTLynvoLWxCbIDXl0hNJ2q60WTRhVQVFOxOt2-8bwYgRxM9-RwfzXlPCOBIofIzeGm1UpxEG3CJkSnyBf5woZ2jourx6dS1KEq0_sOILy4-j6sxeUrUmnA6lm9yL-6Js1n5VrbFqH6JC89TqZfNRBfqwB6JhZ5aer3iN_g"/>
+</div>
+</div>
+</header>
+<!-- Observability Dashboard Content -->
+<main class="flex-1 overflow-y-auto p-md md:p-lg custom-scrollbar">
+<div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Observability</h2>
+<p class="font-code-sm text-code-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+                        Backed by Prometheus + Grafana + Loki on GKE
+                    </p>
+</div>
+<div class="flex gap-sm">
+<div class="px-sm py-1 bg-surface-container-high border border-outline-variant rounded flex items-center gap-xs font-code-sm text-code-sm text-on-surface">
+<span class="w-2 h-2 rounded-full bg-green-500"></span> Live
+                    </div>
+<select class="bg-surface-container-high border border-outline-variant text-on-surface font-code-sm text-code-sm rounded px-sm py-1 focus:border-primary focus:ring-0">
+<option>Last 15m</option>
+<option>Last 1h</option>
+<option>Last 24h</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Service Health Grid (Left Column) -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Metrics Sparklines -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant flex flex-col">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Cluster CPU Usage</span>
+<span class="font-code-md text-code-md text-secondary">42%</span>
+</div>
+<div class="h-16 w-full flex items-end gap-1 mt-auto">
+<!-- Mock Sparkline Bars -->
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[30%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[40%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[35%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[50%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[45%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[60%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[55%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-secondary rounded-t-sm h-[42%]"></div>
+</div>
+</div>
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant flex flex-col">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Cluster Memory</span>
+<span class="font-code-md text-code-md text-secondary">68%</span>
+</div>
+<div class="h-16 w-full flex items-end gap-1 mt-auto">
+<!-- Mock Sparkline Bars -->
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[60%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[62%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[65%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[63%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[68%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[70%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-surface-container-highest rounded-t-sm h-[69%] hover:bg-secondary transition-colors"></div>
+<div class="w-full bg-secondary rounded-t-sm h-[68%]"></div>
+</div>
+</div>
+</div>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- userService -->
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant hover:border-secondary transition-colors group cursor-pointer">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">group</span>
+<h3 class="font-code-md text-code-md font-bold text-on-surface">userService</h3>
+</div>
+<div class="flex items-center gap-xs px-2 py-1 bg-green-900/20 border border-green-500/30 rounded text-green-400 font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-green-500"></span> Healthy
+                                </div>
+</div>
+<div class="grid grid-cols-3 gap-sm mb-md">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Uptime</p>
+<p class="font-code-md text-code-md text-on-surface">99.99%</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Req/sec</p>
+<p class="font-code-md text-code-md text-on-surface">1,240</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Error Rate</p>
+<p class="font-code-md text-code-md text-on-surface">0.01%</p>
+</div>
+</div>
+</div>
+<!-- apiService -->
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant hover:border-secondary transition-colors group cursor-pointer">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">api</span>
+<h3 class="font-code-md text-code-md font-bold text-on-surface">apiService</h3>
+</div>
+<div class="flex items-center gap-xs px-2 py-1 bg-yellow-900/20 border border-yellow-500/30 rounded text-yellow-400 font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-yellow-500"></span> Degraded
+                                </div>
+</div>
+<div class="grid grid-cols-3 gap-sm mb-md">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Uptime</p>
+<p class="font-code-md text-code-md text-on-surface">99.95%</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Req/sec</p>
+<p class="font-code-md text-code-md text-on-surface">3,500</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Error Rate</p>
+<p class="font-code-md text-code-md text-yellow-400">1.2%</p>
+</div>
+</div>
+</div>
+<!-- projectService -->
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant hover:border-secondary transition-colors group cursor-pointer">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">folder</span>
+<h3 class="font-code-md text-code-md font-bold text-on-surface">projectService</h3>
+</div>
+<div class="flex items-center gap-xs px-2 py-1 bg-green-900/20 border border-green-500/30 rounded text-green-400 font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-green-500"></span> Healthy
+                                </div>
+</div>
+<div class="grid grid-cols-3 gap-sm mb-md">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Uptime</p>
+<p class="font-code-md text-code-md text-on-surface">100%</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Req/sec</p>
+<p class="font-code-md text-code-md text-on-surface">450</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Error Rate</p>
+<p class="font-code-md text-code-md text-on-surface">0.00%</p>
+</div>
+</div>
+</div>
+<!-- taskService -->
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant hover:border-secondary transition-colors group cursor-pointer">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">task</span>
+<h3 class="font-code-md text-code-md font-bold text-on-surface">taskService</h3>
+</div>
+<div class="flex items-center gap-xs px-2 py-1 bg-red-900/20 border border-red-500/30 rounded text-error font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-error"></span> Critical
+                                </div>
+</div>
+<div class="grid grid-cols-3 gap-sm mb-md">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Uptime</p>
+<p class="font-code-md text-code-md text-error">98.5%</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Req/sec</p>
+<p class="font-code-md text-code-md text-on-surface">890</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Error Rate</p>
+<p class="font-code-md text-code-md text-error">5.8%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Logs Panel (Right Column) -->
+<div class="lg:col-span-4 bg-surface-container border border-outline-variant rounded-lg flex flex-col h-[600px] lg:h-auto">
+<div class="p-sm border-b border-outline-variant bg-surface-container-high flex justify-between items-center rounded-t-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">receipt_long</span>
+<span class="font-label-caps text-label-caps text-on-surface">Live Tail (Loki)</span>
+</div>
+<div class="flex gap-xs">
+<button class="p-1 hover:bg-surface rounded text-on-surface-variant"><span class="material-symbols-outlined text-sm">filter_list</span></button>
+<button class="p-1 hover:bg-surface rounded text-on-surface-variant"><span class="material-symbols-outlined text-sm">pause</span></button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-sm font-code-sm text-code-sm custom-scrollbar bg-surface-container-lowest">
+<!-- Log Entries -->
+<div class="log-entry px-xs py-1 flex gap-sm items-start font-mono whitespace-pre-wrap break-all border-b border-outline-variant/30">
+<span class="text-on-surface-variant shrink-0">14:32:01.124</span>
+<span class="text-secondary shrink-0">[apiService]</span>
+<span class="text-blue-400 shrink-0">INFO</span>
+<span class="text-on-surface">Incoming request GET /api/v1/tasks from 10.244.1.5</span>
+</div>
+<div class="log-entry px-xs py-1 flex gap-sm items-start font-mono whitespace-pre-wrap break-all border-b border-outline-variant/30">
+<span class="text-on-surface-variant shrink-0">14:32:01.150</span>
+<span class="text-secondary shrink-0">[apiService]</span>
+<span class="text-blue-400 shrink-0">INFO</span>
+<span class="text-on-surface">Routing to taskService (pod-task-84x9)</span>
+</div>
+<div class="log-entry px-xs py-1 flex gap-sm items-start font-mono whitespace-pre-wrap break-all border-b border-outline-variant/30 bg-red-900/10">
+<span class="text-on-surface-variant shrink-0">14:32:01.402</span>
+<span class="text-secondary shrink-0">[taskService]</span>
+<span class="text-error font-bold shrink-0">ERROR</span>
+<span class="text-error">Database connection timeout (300ms) attempting to fetch task details. Query ID: 9a8b7c. Stack trace attached.</span>
+</div>
+<div class="log-entry px-xs py-1 flex gap-sm items-start font-mono whitespace-pre-wrap break-all border-b border-outline-variant/30">
+<span class="text-on-surface-variant shrink-0">14:32:02.001</span>
+<span class="text-secondary shrink-0">[userService]</span>
+<span class="text-blue-400 shrink-0">INFO</span>
+<span class="text-on-surface">Session refreshed for user ID 4092.</span>
+</div>
+<div class="log-entry px-xs py-1 flex gap-sm items-start font-mono whitespace-pre-wrap break-all border-b border-outline-variant/30 bg-yellow-900/10">
+<span class="text-on-surface-variant shrink-0">14:32:03.111</span>
+<span class="text-secondary shrink-0">[apiService]</span>
+<span class="text-yellow-400 shrink-0">WARN</span>
+<span class="text-yellow-400">High latency detected (450ms) on endpoint /api/v1/metrics.</span>
+</div>
+<div class="log-entry px-xs py-1 flex gap-sm items-start font-mono whitespace-pre-wrap break-all border-b border-outline-variant/30">
+<span class="text-on-surface-variant shrink-0">14:32:04.555</span>
+<span class="text-secondary shrink-0">[projectService]</span>
+<span class="text-blue-400 shrink-0">INFO</span>
+<span class="text-on-surface">Cache hit for project settings proj_X912.</span>
+</div>
+<div class="log-entry px-xs py-1 flex gap-sm items-start font-mono whitespace-pre-wrap break-all border-b border-outline-variant/30 bg-red-900/10">
+<span class="text-on-surface-variant shrink-0">14:32:05.102</span>
+<span class="text-secondary shrink-0">[taskService]</span>
+<span class="text-error font-bold shrink-0">ERROR</span>
+<span class="text-error">Connection pool exhausted. Failing fast.</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="js/api.js"></script>
+<script>Session.requireAuth();</script>
+<script src="js/theme.js"></script>
+</body></html>

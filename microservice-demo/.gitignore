@@ -1,0 +1,16 @@
+.vscode
+
+userService/.idea
+userService/node_modules
+
+projectService/.idea
+projectService/__pycache__
+projectService/proto/__pycache__
+
+taskService/.idea
+taskService/vendor
+
+apiService/vendor
+apiService/.idea
+
+protos/vendor

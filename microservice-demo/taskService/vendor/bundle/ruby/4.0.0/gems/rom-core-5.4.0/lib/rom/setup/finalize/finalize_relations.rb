@@ -1,0 +1,169 @@
+# frozen_string_literal: true
+
+require 'rom/constants'
+require 'rom/relation_registry'
+require 'rom/mapper_registry'
+
+module ROM
+  class Finalize
+    class FinalizeRelations
+      attr_reader :notifications
+
+      class RegistryReaders < ::Module
+        def initialize(relations)
+          super()
+
+          relations.each do |name|
+            define_method(name) { __registry__[name] }
+          end
+        end
+      end
+
+      # Build relation registry of specified descendant classes
+      #
+      # This is used by the setup
+      #
+      # @param [Hash] gateways
+      # @param [Array] relation_classes a list of relation descendants
+      #
+      # @api private
+      def initialize(gateways, relation_classes, notifications:, mappers: nil, plugins: EMPTY_ARRAY)
+        @gateways = gateways
+        @relation_classes = relation_classes
+        @mappers = mappers
+        @plugins = plugins
+        @notifications = notifications
+      end
+
+      # @return [Hash]
+      #
+      # @api private
+      #
+      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      def run!
+        relation_registry = RelationRegistry.new do |registry, relations|
+          registry_readers = RegistryReaders.new(relation_names)
+          @relation_classes.each do |klass|
+            unless klass.adapter
+              raise MissingAdapterIdentifierError,
+                    "Relation class +#{klass}+ is missing the adapter identifier"
+            end
+
+            key = klass.relation_name.to_sym
+
+            if registry.key?(key)
+              raise RelationAlreadyDefinedError,
+                    "Relation with name #{key.inspect} registered more than once"
+            end
+
+            klass.use(:registry_reader, readers: registry_readers)
+
+            notifications.trigger(
+              'configuration.relations.class.ready',
+              relation: klass,
+              adapter: klass.adapter
+            )
+
+            relations[key] = build_relation(klass, registry)
+          end
+
+          registry.each_value do |relation|
+            notifications.trigger(
+              'configuration.relations.object.registered',
+              relation: relation, registry: registry
+            )
+          end
+        end
+
+        notifications.trigger(
+          'configuration.relations.registry.created', registry: relation_registry
+        )
+
+        relation_registry
+      end
+      # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+
+      # @return [ROM::Relation]
+      #
+      # @api private
+      #
+      # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+      def build_relation(klass, registry)
+        # TODO: raise a meaningful error here and add spec covering the case
+        #       where klass' gateway points to non-existant repo
+        gateway = @gateways.fetch(klass.gateway)
+
+        plugins = schema_plugins
+
+        schema = klass.schema_proc.call do
+          plugins.each { |plugin| app_plugin(plugin) }
+        end
+
+        klass.set_schema!(schema) if klass.schema.nil?
+
+        notifications.trigger(
+          'configuration.relations.schema.allocated',
+          schema: schema, gateway: gateway, registry: registry
+        )
+
+        relation_plugins.each do |plugin|
+          plugin.apply_to(klass)
+        end
+
+        notifications.trigger(
+          'configuration.relations.schema.set',
+          schema: schema, relation: klass, registry: registry, adapter: klass.adapter
+        )
+
+        rel_key = schema.name.to_sym
+        dataset = gateway.dataset(schema.name.dataset).instance_exec(klass, &klass.dataset)
+
+        notifications.trigger(
+          'configuration.relations.dataset.allocated',
+          dataset: dataset, relation: klass, adapter: klass.adapter
+        )
+
+        options = {
+          __registry__: registry,
+          mappers: mapper_registry(rel_key, klass),
+          schema: schema,
+          **plugin_options
+        }
+
+        klass.new(dataset, **options)
+      end
+      # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
+
+      # @api private
+      def mapper_registry(rel_key, rel_class)
+        registry = rel_class.mapper_registry(cache: @mappers.cache)
+
+        if @mappers.key?(rel_key)
+          registry.merge(@mappers[rel_key])
+        else
+          registry
+        end
+      end
+
+      # @api private
+      def plugin_options
+        relation_plugins.map(&:config).map(&:to_hash).reduce(:merge) || EMPTY_HASH
+      end
+
+      # @api private
+      def relation_plugins
+        @plugins.select { |p| p.type == :relation }
+      end
+
+      # @api private
+      def schema_plugins
+        @plugins.select { |p| p.type == :schema }
+      end
+
+      # @api private
+      def relation_names
+        @relation_classes.map(&:relation_name).map(&:relation).uniq
+      end
+    end
+  end
+end

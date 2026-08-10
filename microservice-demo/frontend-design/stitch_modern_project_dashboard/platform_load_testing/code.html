@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Load Testing - MicroOps</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;450&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2e3037",
+                        "tertiary-fixed": "#dee2f1",
+                        "surface-variant": "#32353c",
+                        "surface-container-highest": "#32353c",
+                        "error": "#ffb4ab",
+                        "secondary": "#5de6ff",
+                        "on-primary-container": "#0d0096",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#8c909e",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-surface": "#e1e2eb",
+                        "secondary-fixed": "#a2eeff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-error": "#690005",
+                        "primary": "#c0c1ff",
+                        "tertiary-fixed-dim": "#c2c6d4",
+                        "on-secondary": "#00363e",
+                        "tertiary": "#c2c6d4",
+                        "outline": "#908fa0",
+                        "surface-tint": "#c0c1ff",
+                        "inverse-primary": "#494bd6",
+                        "on-primary": "#1000a9",
+                        "on-background": "#e1e2eb",
+                        "on-secondary-fixed": "#001f25",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-fixed": "#171c26",
+                        "on-tertiary-container": "#252a35",
+                        "on-secondary-container": "#00515d",
+                        "surface-bright": "#363940",
+                        "primary-fixed": "#e1e0ff",
+                        "background": "#10131a",
+                        "surface-dim": "#10131a",
+                        "primary-container": "#8083ff",
+                        "secondary-container": "#00cbe6",
+                        "on-tertiary": "#2b303b",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "outline-variant": "#464554",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface": "#10131a",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "surface-container-high": "#272a31",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary-fixed-variant": "#424752",
+                        "surface-container-low": "#191c22",
+                        "surface-container": "#1d2026",
+                        "on-primary-fixed": "#07006c",
+                        "ops-accent": "#22D3EE"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "code-md": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "code-sm": ["12px", { "lineHeight": "18px", "fontWeight": "450" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Chart Mockup Styles */
+        .chart-grid {
+            background-image: 
+                linear-gradient(to right, #2A2F3A 1px, transparent 1px),
+                linear-gradient(to bottom, #2A2F3A 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        .chart-line-p50 { stroke: #6366F1; stroke-width: 2; fill: none; }
+        .chart-line-p95 { stroke: #22D3EE; stroke-width: 2; fill: none; }
+        .chart-line-p99 { stroke: #ffb4ab; stroke-width: 2; fill: none; }
+        
+        /* Custom Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #22D3EE;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #2A2F3A;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md m-0 p-0 overflow-x-hidden flex h-screen">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-64 border-r border-outline-variant bg-surface-container-low p-md gap-sm">
+<div class="flex items-center gap-sm mb-lg">
+<img alt="Project Logo" class="w-8 h-8 rounded" data-alt="A small, modern, geometric project logo graphic using cyan and indigo geometric shapes on a dark gray background, highly detailed, minimalist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANXuD3OIjo4K36NvJQxxDMZqFVIJYAENZoa1wj3wQ52DOqm_gDuJM7xLkzeRGOZfrLViYqOPUelA9oOYCYBkrQC13tTpiLhHx1bX2Oy2Px-UTu8v5CnIO650M-tmumf8E18NzRqns61SgEBTKt6GW8qU6to8xKiJ15bXbO8SOqAot0EwKO-0k6h_O4N4R5v2oyJ3ww3_dh_jWwVbzpBYV6DsWtzSJB3HvsX67UmX3pzHCFnRyK83zEbw"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-primary font-bold">Project Alpha</h1>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Production Cluster</span>
+</div>
+</div>
+<button class="bg-inverse-primary text-on-primary w-full py-2 rounded-DEFAULT mb-md font-body-md flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined">add</span>
+            New Project
+        </button>
+<div class="flex-grow flex flex-col gap-base">
+<a class="flex items-center gap-sm p-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-sm p-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">folder_managed</span>
+                Projects
+            </a>
+<a class="flex items-center gap-sm p-sm rounded-lg bg-primary-container text-on-primary-container transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined filled">speed</span>
+                Load Testing
+            </a>
+<a class="flex items-center gap-sm p-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                Observability
+            </a>
+</div>
+<div class="mt-auto flex flex-col gap-base pt-md border-t border-outline-variant">
+<a class="flex items-center gap-sm p-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-sm p-sm rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar (Mobile only for nav, Desktop for actions/profile) -->
+<header class="w-full h-16 flex items-center border-b border-outline-variant bg-surface flex justify-between items-center px-lg w-full shrink-0">
+<div class="flex items-center gap-sm md:hidden">
+<span class="material-symbols-outlined cursor-pointer">menu</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">MicroOps</span>
+</div>
+<div class="hidden md:flex items-center">
+<!-- Search could go here -->
+</div>
+<div class="flex items-center gap-md text-primary">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high transition-colors p-1 rounded">dark_mode</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high transition-colors p-1 rounded">notifications</span>
+<div class="h-6 w-px bg-outline-variant mx-xs"></div>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-container-high transition-colors p-1 rounded">
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A small circular avatar of a tech worker wearing glasses in a dimly lit server room, modern corporate developer style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEJZhoquGicsgidrYkbJ-CC-TdwZ20HjkSp0iQZ-rvUv1I1o4IYl1R4s3dIpqApvDIE7gl18OKmS_wjsh-WOSjUm4zv19P8KtbGHqeuRE9TqfLshAy9K6eENdcpGhBnzV3nyMvr8MiDFp0nW3plLpZNTvJFrGqn7p5gOgDvrqB7bAla9-lcXLnrIR6lCT-PuawfYZv7HTVMDQ5BpfldGzriq3b321IaSqCrWhFoQZMTiaORq3T765S7g"/>
+<span class="font-body-md hidden lg:inline">Logout</span>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-grow overflow-y-auto p-md md:p-lg bg-background">
+<!-- Header -->
+<div class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Load Testing</h2>
+<p class="font-body-md text-on-surface-variant">Configure and execute high-throughput synthetic load against your microservices.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Controls Panel (Bento Card) -->
+<div class="lg:col-span-4 bg-surface rounded-lg border border-outline-variant p-md flex flex-col gap-lg">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary">tune</span>
+                            Test Configuration
+                        </h3>
+</div>
+<!-- Target Service -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Target Service</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded p-sm font-body-md text-on-surface focus:border-inverse-primary focus:ring-1 focus:ring-inverse-primary outline-none">
+<option>payment-gateway-v2 (prod)</option>
+<option>auth-service (prod)</option>
+<option>user-profile-api (staging)</option>
+<option>inventory-sync (prod)</option>
+</select>
+</div>
+<!-- Sliders & Inputs -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-end">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Target RPS</label>
+<span class="font-code-md text-code-md text-secondary">5,000 req/s</span>
+</div>
+<input class="mt-2" max="10000" min="100" type="range" value="5000"/>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Duration (sec)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded p-sm font-code-md text-code-md text-on-surface focus:border-inverse-primary focus:ring-1 focus:ring-inverse-primary outline-none" type="number" value="300"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Concurrency</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded p-sm font-code-md text-code-md text-on-surface focus:border-inverse-primary focus:ring-1 focus:ring-inverse-primary outline-none" type="number" value="50"/>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-auto pt-md border-t border-outline-variant flex gap-sm">
+<button class="flex-1 bg-ops-accent text-surface-container-lowest font-body-md font-bold py-2 rounded flex items-center justify-center gap-xs hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined filled">play_arrow</span>
+                            Start Test
+                        </button>
+<button class="bg-surface-container-high border border-outline-variant text-error hover:bg-error hover:text-on-error py-2 px-4 rounded transition-colors" title="Emergency Stop">
+<span class="material-symbols-outlined">stop</span>
+</button>
+</div>
+</div>
+<!-- Live Stats & Chart (Bento Card) -->
+<div class="lg:col-span-8 bg-surface rounded-lg border border-outline-variant p-md flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-inverse-primary">ssid_chart</span>
+                            Live Telemetry
+                        </h3>
+<div class="flex items-center gap-sm">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="font-label-caps text-label-caps text-secondary">RUNNING</span>
+</div>
+</div>
+<!-- Big Numbers -->
+<div class="grid grid-cols-4 gap-sm mb-lg">
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant border-l-2 border-l-secondary">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Current RPS</div>
+<div class="font-code-md text-code-md text-on-surface text-lg mt-1">4,982</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant border-l-2 border-l-inverse-primary">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Total Requests</div>
+<div class="font-code-md text-code-md text-on-surface text-lg mt-1">1.2M</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant border-l-2 border-l-[#4ade80]">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Success</div>
+<div class="font-code-md text-code-md text-[#4ade80] text-lg mt-1">99.98%</div>
+</div>
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant border-l-2 border-l-error">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Errors</div>
+<div class="font-code-md text-code-md text-error text-lg mt-1">24</div>
+</div>
+</div>
+<!-- Chart Area -->
+<div class="flex-grow bg-surface-container-lowest border border-outline-variant rounded relative min-h-[250px] overflow-hidden chart-grid">
+<!-- Y-Axis Labels -->
+<div class="absolute left-2 top-2 bottom-2 flex flex-col justify-between text-on-surface-variant font-code-sm text-code-sm opacity-70 z-10">
+<span>250ms</span>
+<span>125ms</span>
+<span>0ms</span>
+</div>
+<!-- Legend -->
+<div class="absolute top-2 right-2 bg-surface/80 backdrop-blur-sm border border-outline-variant rounded p-xs flex gap-sm z-10">
+<div class="flex items-center gap-xs"><div class="w-3 h-1 bg-[#6366F1]"></div><span class="font-code-sm text-code-sm text-on-surface">p50</span></div>
+<div class="flex items-center gap-xs"><div class="w-3 h-1 bg-ops-accent"></div><span class="font-code-sm text-code-sm text-on-surface">p95</span></div>
+<div class="flex items-center gap-xs"><div class="w-3 h-1 bg-error"></div><span class="font-code-sm text-code-sm text-on-surface">p99</span></div>
+</div>
+<!-- SVG Chart Mockup -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 100">
+<!-- p50 -->
+<path class="chart-line-p50" d="M0,80 Q50,75 100,78 T200,82 T300,75 T400,80 T500,70 T600,75 T700,78 T800,72 T900,75 T1000,70"></path>
+<!-- p95 -->
+<path class="chart-line-p95" d="M0,50 Q50,40 100,60 T200,45 T300,30 T400,50 T500,40 T600,60 T700,35 T800,45 T900,30 T1000,40"></path>
+<!-- p99 -->
+<path class="chart-line-p99" d="M0,20 Q50,10 100,30 T200,15 T300,5 T400,25 T500,10 T600,40 T700,15 T800,20 T900,10 T1000,15"></path>
+</svg>
+</div>
+</div>
+<!-- History Table (Spans full width below) -->
+<div class="lg:col-span-12 bg-surface rounded-lg border border-outline-variant overflow-hidden mt-sm">
+<div class="p-md border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined">history</span>
+                            Recent Runs
+                        </h3>
+<button class="font-body-md text-sm text-inverse-primary hover:text-primary transition-colors">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-highest">
+<th class="p-sm font-label-caps text-label-caps text-on-surface-variant w-1/4">Target</th>
+<th class="p-sm font-label-caps text-label-caps text-on-surface-variant">Timestamp</th>
+<th class="p-sm font-label-caps text-label-caps text-on-surface-variant">Max RPS</th>
+<th class="p-sm font-label-caps text-label-caps text-on-surface-variant">p95 Latency</th>
+<th class="p-sm font-label-caps text-label-caps text-on-surface-variant">Status</th>
+<th class="p-sm font-label-caps text-label-caps text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface">
+<tr class="border-b border-outline-variant hover:bg-surface-container-high transition-colors">
+<td class="p-sm font-code-md text-code-md">payment-gateway-v2</td>
+<td class="p-sm text-on-surface-variant">2023-10-24 14:32Z</td>
+<td class="p-sm font-code-md text-code-md">4,892</td>
+<td class="p-sm font-code-md text-code-md">112ms</td>
+<td class="p-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-[#4ade80]/10 text-[#4ade80] border border-[#4ade80]/20">PASSED</span>
+</td>
+<td class="p-sm text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface text-sm">analytics</span>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-high transition-colors">
+<td class="p-sm font-code-md text-code-md">auth-service</td>
+<td class="p-sm text-on-surface-variant">2023-10-24 11:05Z</td>
+<td class="p-sm font-code-md text-code-md">10,000</td>
+<td class="p-sm font-code-md text-code-md text-error">850ms</td>
+<td class="p-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-error/10 text-error border border-error/20">DEGRADED</span>
+</td>
+<td class="p-sm text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface text-sm">analytics</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="p-sm font-code-md text-code-md">inventory-sync</td>
+<td class="p-sm text-on-surface-variant">2023-10-23 09:15Z</td>
+<td class="p-sm font-code-md text-code-md">2,500</td>
+<td class="p-sm font-code-md text-code-md">45ms</td>
+<td class="p-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-[#4ade80]/10 text-[#4ade80] border border-[#4ade80]/20">PASSED</span>
+</td>
+<td class="p-sm text-right">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface text-sm">analytics</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

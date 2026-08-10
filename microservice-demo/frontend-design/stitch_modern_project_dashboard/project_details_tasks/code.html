@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Details - MicroOps</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 20px; /* Default size, adjust with Tailwind text- classes */
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom scrollbar for Kanban board */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0e14; /* surface-container-lowest */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #32353c; /* surface-variant */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #464554; /* outline-variant */
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2e3037",
+                        "tertiary-fixed": "#dee2f1",
+                        "surface-variant": "#32353c",
+                        "surface-container-highest": "#32353c",
+                        "error": "#ffb4ab",
+                        "secondary": "#5de6ff",
+                        "on-primary-container": "#0d0096",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#8c909e",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-surface": "#e1e2eb",
+                        "secondary-fixed": "#a2eeff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-error": "#690005",
+                        "primary": "#c0c1ff",
+                        "tertiary-fixed-dim": "#c2c6d4",
+                        "on-secondary": "#00363e",
+                        "tertiary": "#c2c6d4",
+                        "outline": "#908fa0",
+                        "surface-tint": "#c0c1ff",
+                        "inverse-primary": "#494bd6",
+                        "on-primary": "#1000a9",
+                        "on-background": "#e1e2eb",
+                        "on-secondary-fixed": "#001f25",
+                        "inverse-surface": "#e1e2eb",
+                        "on-tertiary-fixed": "#171c26",
+                        "on-tertiary-container": "#252a35",
+                        "on-secondary-container": "#00515d",
+                        "surface-bright": "#363940",
+                        "primary-fixed": "#e1e0ff",
+                        "background": "#10131a",
+                        "surface-dim": "#10131a",
+                        "primary-container": "#8083ff",
+                        "secondary-container": "#00cbe6",
+                        "on-tertiary": "#2b303b",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "outline-variant": "#464554",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface": "#10131a",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "surface-container-high": "#272a31",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary-fixed-variant": "#424752",
+                        "surface-container-low": "#191c22",
+                        "surface-container": "#1d2026",
+                        "on-primary-fixed": "#07006c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "code-md": ["JetBrains Mono", "monospace"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "code-sm": ["JetBrains Mono", "monospace"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-sm": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "code-sm": ["12px", { "lineHeight": "18px", "fontWeight": "450" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md flex h-screen overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex h-screen w-64 flex-col border-r border-outline-variant bg-surface-container-low p-md gap-sm text-primary dark:text-primary z-20">
+<!-- Header -->
+<div class="flex items-center gap-sm mb-lg px-sm">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-outline-variant flex-shrink-0">
+<img alt="Project Logo" class="w-full h-full object-cover" data-alt="A sleek, modern geometric logo for 'Project Alpha' featuring sharp angles and a vibrant indigo color palette set against a dark, metallic background, exuding high-tech performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSkw5oc0Ke1bTVEyhihXQReF6c3EJL9D_vUIwEjSiXqQD4fumgHIWdwrUP1YG5jOB4X9uwM7_-AfWZcxk_vZOGK9o85q7H_9KX15TxCQ6PobgsEK9qmZkT3W1NhBJMgCjBR7HqTJlGGggPSlDuHD8-RTzb27alLaPU9bNk_7A0dqPlyC4cjyiWydkJX7rAZuI_E5wOQyPPGQV_7LwrOzEXVYmLu554U2ldQ8AbsFhPM4N2fcixKK2rtQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary truncate">Project Alpha</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Production Cluster</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-xs flex-1">
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps uppercase" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">dashboard</span>
+                Dashboard
+            </a>
+<!-- Active -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">folder_managed</span>
+                Projects
+            </a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps uppercase" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">speed</span>
+                Load Testing
+            </a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps uppercase" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">monitoring</span>
+                Observability
+            </a>
+</div>
+<!-- CTA -->
+<div class="mt-auto mb-lg">
+<button class="w-full flex items-center justify-center gap-sm bg-primary text-on-primary font-label-caps text-label-caps uppercase py-sm px-md rounded-lg hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                New Project
+            </button>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-col gap-xs border-t border-outline-variant pt-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps uppercase" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-caps text-label-caps uppercase" href="#">
+<span class="material-symbols-outlined" style="font-size: 20px;">help</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 bg-background relative">
+<!-- Header -->
+<header class="h-16 px-lg flex items-center border-b border-outline-variant bg-surface sticky top-0 z-10 flex-shrink-0 justify-between">
+<div class="flex items-center gap-sm">
+<!-- Mobile Menu Toggle (Decorative) -->
+<button class="md:hidden text-on-surface-variant hover:text-on-surface mr-sm">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-xs font-code-sm text-code-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Projects</a>
+<span class="material-symbols-outlined" style="font-size: 16px;">chevron_right</span>
+<span class="text-on-surface">Project Alpha</span>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<!-- Top Nav Actions (from JSON context) -->
+<button class="text-on-surface-variant hover:text-on-surface transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden cursor-pointer ml-sm">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional headshot of a software engineer in a low-light developer environment, lit softly by monitors, exuding focus and technical expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR7wjkeiv6FnZmMwEiVhsBk4DQldXgJ-5FepVoX-vQ3peg7YsxxwlZjHxgjqVkTMuaD1Q1im7qNClRyLWCRbWSAGDK2CCjerJmDGzKKsU3zJC40tZSlNQv-jlvzyUIS7W4APSiJMxVwtfj75iT-lGjVhcvDv1dapONiCoRbPmbaC2yfxDhWZcXuZhhI0_9mT0AlZ8ZpPHmtMveMzMUKBs0RbxAV1IudCXc52ZRpaY-JBcIqom7pU1j3Q"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Body -->
+<div class="flex-1 overflow-auto p-lg flex flex-col gap-lg">
+<!-- Page Title & Controls -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-md border-b border-outline-variant pb-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Project Alpha</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Core microservices orchestration and deployment pipelines. Currently monitoring production cluster health.</p>
+</div>
+<div class="flex items-center gap-sm">
+<!-- Filter Button -->
+<button class="flex items-center gap-xs px-md py-sm rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high transition-colors font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined" style="font-size: 16px;">filter_list</span>
+                        Filters
+                    </button>
+<!-- New Task Button -->
+<button class="flex items-center gap-xs px-md py-sm rounded-lg bg-inverse-primary text-on-primary font-label-caps text-label-caps uppercase hover:bg-primary transition-colors shadow-[0_4px_12px_rgba(99,102,241,0.15)]" onclick="document.getElementById('newTaskModal').showModal()">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                        New Task
+                    </button>
+</div>
+</div>
+<!-- Tags Section -->
+<div class="flex items-center flex-wrap gap-sm">
+<span class="font-code-sm text-code-sm text-on-surface-variant mr-sm">Tags:</span>
+<!-- Tag Chips -->
+<div class="flex items-center gap-xs bg-[#1a2f26] border border-[#2e5d48] px-sm py-xs rounded-full text-[#4ade80] font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-[#4ade80]"></span>
+                    frontend
+                </div>
+<div class="flex items-center gap-xs bg-primary-container/20 border border-primary-container px-sm py-xs rounded-full text-primary font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                    backend
+                </div>
+<div class="flex items-center gap-xs bg-secondary-container/20 border border-secondary-container px-sm py-xs rounded-full text-secondary font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    infrastructure
+                </div>
+<!-- Add Tag -->
+<button class="flex items-center gap-xs px-sm py-xs rounded-full border border-outline-variant border-dashed text-on-surface-variant hover:text-on-surface hover:border-on-surface transition-colors font-code-sm text-code-sm ml-xs">
+<span class="material-symbols-outlined" style="font-size: 14px;">add</span>
+                    Add Tag
+                </button>
+</div>
+<!-- Kanban Board -->
+<div class="flex-1 flex gap-lg overflow-x-auto pb-sm items-start">
+<!-- Column: To Do -->
+<div class="w-[320px] flex-shrink-0 flex flex-col gap-sm bg-surface-container-lowest rounded-lg border border-outline-variant p-sm min-h-[500px]">
+<div class="flex items-center justify-between px-sm py-xs border-b border-outline-variant/50">
+<div class="flex items-center gap-sm">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">To Do</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded-full font-code-sm text-[10px]">3</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined" style="font-size: 16px;">more_horiz</span></button>
+</div>
+<!-- Task Cards List -->
+<div class="flex flex-col gap-sm overflow-y-auto pt-sm flex-1">
+<!-- Card 1 -->
+<div class="bg-surface border border-outline-variant p-md rounded-lg flex flex-col gap-md hover:border-outline hover:bg-surface-container-high transition-colors cursor-grab group">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors leading-tight">Implement rate limiting on Auth Service API</h4>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<div class="flex items-center gap-xs bg-primary-container/20 border border-primary-container px-2 py-0.5 rounded-full text-primary font-code-sm text-[10px]">
+                                    backend
+                                </div>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant bg-surface-container" title="Unassigned">
+<span class="material-symbols-outlined text-on-surface-variant flex items-center justify-center w-full h-full" style="font-size: 14px;">person_outline</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-outline-variant p-md rounded-lg flex flex-col gap-md hover:border-outline hover:bg-surface-container-high transition-colors cursor-grab group">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors leading-tight">Update Terraform state for staging DB</h4>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<div class="flex items-center gap-xs bg-secondary-container/20 border border-secondary-container px-2 py-0.5 rounded-full text-secondary font-code-sm text-[10px]">
+                                    infrastructure
+                                </div>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Sarah J." class="w-full h-full object-cover" data-alt="A small avatar showing a female engineer with short hair, illuminated by a cool blue light in a dark server room context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5hK0yp1cUrZl1oAw4KcVVtIj7CgTbihaq64JsR6XcwmZ4ErzQBEMoe2yJ6DT1k9tCyDkslWeYWTp7pxyIAY8_MVSnx81ycRRn6DE3ylgnu4K8jRfVZqEopuh9wLiXNqoRmF2hLx5SFNBnV-HWbjeZ04ozYqle2zYZxUxblb9FI87rS5vorfBP0eMw97-bTSoPkpjdUWbJkQN-VXRkobjKey5SLGyoR1mcvD_nGe9uu5MiYpZH_7RYPQ"/>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface border border-outline-variant p-md rounded-lg flex flex-col gap-md hover:border-outline hover:bg-surface-container-high transition-colors cursor-grab group">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors leading-tight">Design new empty states for Dashboard</h4>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<div class="flex items-center gap-xs bg-[#1a2f26] border border-[#2e5d48] px-2 py-0.5 rounded-full text-[#4ade80] font-code-sm text-[10px]">
+                                    frontend
+                                </div>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Mike T." class="w-full h-full object-cover" data-alt="A small avatar showing a male designer with glasses, focused expression, dark moody background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8m6LQTVc7muDtah9aD4m1yrkdgrgPmZE8h9lYEGnjHkLYqVuzOU0rXZimIWXixrQbI-x_ZQYIeBqjeOv1o3QIOwxzWC9CSlbMynmocmoyfTN9oRHLkDMxkl4ss7VMVn632AQBVheB33K9BcSfgzANAW3WWuDYdk2xU7Z-A0nkltjqLLJ9h1oMBTPGT1zza8S9sKa-9mEczHeSKqkRxhlxKyofAgIM8l2Vdc1miu35ehBLP2o2yFkg1A"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Quick Task -->
+<button class="flex items-center gap-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest p-sm rounded-md transition-colors mt-xs font-label-caps text-label-caps uppercase text-left w-full">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                        Quick Task
+                    </button>
+</div>
+<!-- Column: In Progress -->
+<div class="w-[320px] flex-shrink-0 flex flex-col gap-sm bg-surface-container-lowest rounded-lg border border-outline-variant border-t-2 border-t-secondary p-sm min-h-[500px]">
+<div class="flex items-center justify-between px-sm py-xs border-b border-outline-variant/50">
+<div class="flex items-center gap-sm">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">In Progress</h3>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-code-sm text-[10px]">2</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined" style="font-size: 16px;">more_horiz</span></button>
+</div>
+<div class="flex flex-col gap-sm overflow-y-auto pt-sm flex-1">
+<!-- Card 4 -->
+<div class="bg-surface border border-outline-variant p-md rounded-lg flex flex-col gap-md hover:border-outline hover:bg-surface-container-high transition-colors cursor-grab group">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors leading-tight">Migrate User table to PostgreSQL 15</h4>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<div class="flex items-center gap-xs bg-primary-container/20 border border-primary-container px-2 py-0.5 rounded-full text-primary font-code-sm text-[10px]">
+                                    backend
+                                </div>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Sarah J." class="w-full h-full object-cover" data-alt="A small avatar showing a female engineer with short hair, illuminated by a cool blue light in a dark server room context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWL5JaGOnPLL3-4TEVcfShlrZHQsEzq4nhVHZAE4ghaeDvR0G6jkS1625g0RSzYNuat1kRcwlTmPWqcOLMFHucoVY_0vq8ud4dnUJbUENi2CSwUnQTZNObxVU6zI9fIf1HQciKoUEpOCq2dR3Fq0PXFgyM4pmaeTlYby_4kOiiVlCrw4tQ3mtUgX6qaVGx5dYoJptgwh2KC6ehB5rzItfbM3zp99PvJlyjv0crtzKHQRvJC1bQ4are_g"/>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface border border-outline-variant p-md rounded-lg flex flex-col gap-md hover:border-outline hover:bg-surface-container-high transition-colors cursor-grab group">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors leading-tight">Fix WebSockets connection drop on Safari</h4>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<div class="flex items-center gap-xs bg-[#1a2f26] border border-[#2e5d48] px-2 py-0.5 rounded-full text-[#4ade80] font-code-sm text-[10px]">
+                                    frontend
+                                </div>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Alex W." class="w-full h-full object-cover" data-alt="A professional headshot of a software engineer in a low-light developer environment, lit softly by monitors, exuding focus and technical expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3H5AUBi0u6N7WuDW_A00HrSJ25zbasZd_MOVfii_xgoq7Fs0HG5v1P9WpsXiabWYXC32uFaLyIdtfVcB1YgTDk5cUERCPajEZ88ZqQ9oZCY3X6yM_D-M7x7rM78ph2WNMNwSAqhxXQDKASL54MXI7Acxrdj3H_eTN5J2uh3eXGjHs7ZfhZ4WMRgNqqVny6AOKM49YufARCcn_kxZd4z72ePV9IUlBeJcd1kbeNt0iCfE1nlfJgx9UbQ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: Done -->
+<div class="w-[320px] flex-shrink-0 flex flex-col gap-sm bg-surface-container-lowest rounded-lg border border-outline-variant p-sm min-h-[500px] opacity-75 hover:opacity-100 transition-opacity">
+<div class="flex items-center justify-between px-sm py-xs border-b border-outline-variant/50">
+<div class="flex items-center gap-sm">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface-variant">Done</h3>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-0.5 rounded-full font-code-sm text-[10px]">1</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined" style="font-size: 16px;">more_horiz</span></button>
+</div>
+<div class="flex flex-col gap-sm overflow-y-auto pt-sm flex-1">
+<!-- Card 6 -->
+<div class="bg-surface-container border border-outline-variant p-md rounded-lg flex flex-col gap-md">
+<div class="flex justify-between items-start gap-sm">
+<h4 class="font-body-md text-body-md text-on-surface-variant line-through decoration-outline leading-tight">Setup initial project repository</h4>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<div class="flex items-center gap-xs bg-surface-variant border border-outline-variant px-2 py-0.5 rounded-full text-on-surface-variant font-code-sm text-[10px]">
+                                    infrastructure
+                                </div>
+<div class="w-6 h-6 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Alex W." class="w-full h-full object-cover" data-alt="A professional headshot of a software engineer in a low-light developer environment, lit softly by monitors, exuding focus and technical expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlXTGptmues8L8ikB6RvQQOqaNj6gdZqQuf3IOs2W4MZNVZd2iUeiyXCpD-J1smxaWxOPTRjaEGbAx6YSamMPlFgWzxHW6VcXugmnLE_6AT7X3EACUTA3WksCvmuZfOb-eGYsxnObX0lUGr1OFutXcj0ITX_MH9tQzW7KVnKZ2LftCU-thd5in1UIrqSl8OjI1zcULTN8hesHR57m4nGackizM1wUL4xyk_UxAHSIip66ynXy4wn7KpQ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for scrolling -->
+<div class="w-sm flex-shrink-0"></div>
+</div>
+</div>
+</main>
+<!-- New Task Modal (Dialog) -->
+<dialog class="bg-transparent m-auto p-0 backdrop:bg-background/80 backdrop:backdrop-blur-sm" id="newTaskModal">
+<div class="bg-surface border border-outline-variant rounded-xl w-[480px] max-w-[90vw] shadow-2xl flex flex-col overflow-hidden">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-lg py-md border-b border-outline-variant bg-surface-container-low">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Create New Task</h2>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-md hover:bg-surface-variant transition-colors" onclick="document.getElementById('newTaskModal').close()">
+<span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+</button>
+</div>
+<!-- Form -->
+<form action="/v1/task/create" class="p-lg flex flex-col gap-md" method="POST">
+<!-- Task Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="taskName">Task Name</label>
+<input class="bg-surface-container border border-outline-variant rounded-md px-md py-sm font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="taskName" name="name" placeholder="e.g. Optimize Redis cache hit rate" required="" type="text"/>
+</div>
+<div class="flex gap-md">
+<!-- Assignee -->
+<div class="flex flex-col gap-xs flex-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="assignee">Assignee</label>
+<select class="bg-surface-container border border-outline-variant rounded-md px-md py-sm font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none" id="assignee" name="assignee">
+<option value="">Unassigned</option>
+<option value="user_1">Alex W.</option>
+<option value="user_2">Sarah J.</option>
+<option value="user_3">Mike T.</option>
+</select>
+</div>
+<!-- Tag -->
+<div class="flex flex-col gap-xs flex-1">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="tag">Primary Tag</label>
+<select class="bg-surface-container border border-outline-variant rounded-md px-md py-sm font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none" id="tag" name="tag">
+<option value="">Select tag...</option>
+<option value="frontend">frontend</option>
+<option value="backend">backend</option>
+<option value="infrastructure">infrastructure</option>
+</select>
+</div>
+</div>
+<!-- Description (Optional) -->
+<div class="flex flex-col gap-xs mt-sm">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant" for="description">Description (Markdown)</label>
+<textarea class="bg-surface-container border border-outline-variant rounded-md px-md py-sm font-code-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none font-mono" id="description" name="description" rows="3"></textarea>
+</div>
+<!-- Actions -->
+<div class="flex justify-end gap-sm mt-lg pt-md border-t border-outline-variant">
+<button class="px-md py-sm rounded-lg font-label-caps text-label-caps uppercase text-on-surface-variant border border-outline-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('newTaskModal').close()" type="button">
+                        Cancel
+                    </button>
+<button class="px-md py-sm rounded-lg font-label-caps text-label-caps uppercase bg-primary text-on-primary hover:bg-primary-fixed transition-colors shadow-[0_4px_12px_rgba(99,102,241,0.15)] flex items-center gap-xs" type="submit">
+<span class="material-symbols-outlined" style="font-size: 16px;">save</span>
+                        Create Task
+                    </button>
+</div>
+</form>
+</div>
+</dialog>
+</body></html>

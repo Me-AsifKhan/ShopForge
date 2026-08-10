@@ -75,7 +75,20 @@ services:
         command: proxy
         depends_on:
             - api
-    
+
+    frontend:
+        build:
+            context: ./frontend
+        image: microservice/demo/frontend
+        restart: "no"
+        environment:
+            - GATEWAY_HOST=api-gateway
+            - GATEWAY_PORT=9090
+        ports:
+            - 8090:80
+        depends_on:
+            - api-gateway
+
     postgresql:
         image: postgres
         restart: "no"

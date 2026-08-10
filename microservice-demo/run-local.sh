@@ -27,4 +27,13 @@ echo "Starting apiService gRPC (50059) + REST proxy (8081)..."
 (cd "$ROOT/apiService" && nohup ./apiService serve > /tmp/microservice-demo-logs/apiService.log 2>&1 & disown)
 (cd "$ROOT/apiService" && HOST=localhost PORT=50059 PROXY_PORT=8081 nohup ./apiService proxy > /tmp/microservice-demo-logs/apiGateway.log 2>&1 & disown)
 
-echo "Done. Logs in /tmp/microservice-demo-logs. REST API at http://localhost:8081"
+sleep 2
+
+echo "Starting frontend (8090, via Docker)..."
+docker build -q -t microservice/demo/frontend "$ROOT/frontend" >/dev/null
+docker rm -f microops-frontend >/dev/null 2>&1 || true
+docker run -d --rm --name microops-frontend -p 8090:80 \
+  -e GATEWAY_HOST=host.docker.internal -e GATEWAY_PORT=8081 \
+  microservice/demo/frontend >/dev/null
+
+echo "Done. Logs in /tmp/microservice-demo-logs. REST API at http://localhost:8081, UI at http://localhost:8090"

@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location /v1/ {
+        proxy_pass http://${GATEWAY_HOST}:${GATEWAY_PORT}/v1/;
+        proxy_set_header Host $host;
+    }
+
+    location / {
+        try_files $uri $uri.html $uri/ =404;
+    }
+}

@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen",
+      "label": "Projects Dashboard Screen (Project Alpha)",
+      "file_type": "image",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_sidebar_navigation",
+      "label": "Sidebar Navigation (Dashboard, Projects, Load Testing, Observability, Settings, Support, Logout)",
+      "file_type": "concept",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_card_grid",
+      "label": "Project Card Grid Layout",
+      "file_type": "concept",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_core_api_service_card",
+      "label": "Core API Service Project Card (v2.4.1, prod/backend, 12/12 active tasks)",
+      "file_type": "concept",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_user_db_cluster_card",
+      "label": "User DB Cluster Project Card (v1.1.0, data/alert tag, 3/8 active tasks warning state)",
+      "file_type": "concept",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_admin_dashboard_card",
+      "label": "Admin Dashboard Project Card (v3.0.1, frontend/internal, 5/5 active tasks)",
+      "file_type": "concept",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_create_new_project_action",
+      "label": "Create New Project Action Card",
+      "file_type": "concept",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_active_tasks_status_indicator",
+      "label": "Active Tasks Status Indicator Pattern (checkmark = healthy, warning triangle = degraded)",
+      "file_type": "rationale",
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_sidebar_navigation",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_card_grid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_card_grid",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_core_api_service_card",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_card_grid",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_user_db_cluster_card",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_card_grid",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_admin_dashboard_card",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_card_grid",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_create_new_project_action",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_core_api_service_card",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_active_tasks_status_indicator",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_user_db_cluster_card",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_active_tasks_status_indicator",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_admin_dashboard_card",
+      "target": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_active_tasks_status_indicator",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_project_cards_group",
+      "label": "Project Cards forming the Projects grid pattern",
+      "nodes": [
+        "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_core_api_service_card",
+        "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_user_db_cluster_card",
+        "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_admin_dashboard_card",
+        "frontend_design_stitch_modern_project_dashboard_dashboard_projects_screen_create_new_project_action"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/frontend-design/stitch_modern_project_dashboard/dashboard_projects/screen.png"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

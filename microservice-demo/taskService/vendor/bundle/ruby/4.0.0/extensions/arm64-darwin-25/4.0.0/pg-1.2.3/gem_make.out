@@ -1,0 +1,484 @@
+current directory: /Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/taskService/vendor/bundle/ruby/4.0.0/gems/pg-1.2.3/ext
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+checking for pg_config... yes
+Using config values from /opt/homebrew/bin/pg_config
+checking for libpq-fe.h... yes
+checking for libpq/libpq-fs.h... yes
+checking for pg_config_manual.h... yes
+checking for PQconnectdb() in -lpq... yes
+checking for PQsetSingleRowMode()... yes
+checking for PQconninfo()... yes
+checking for PQsslAttribute()... yes
+checking for PQresultVerboseErrorMessage()... yes
+checking for PQencryptPasswordConn()... yes
+checking for PQresultMemorySize()... yes
+checking for timegm()... yes
+checking for rb_gc_adjust_memory_usage()... yes
+checking for unistd.h... yes
+checking for inttypes.h... yes
+checking for C99 variable length arrays... yes
+creating extconf.h
+creating Makefile
+
+current directory: /Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/taskService/vendor/bundle/ruby/4.0.0/gems/pg-1.2.3/ext
+make -j3 DESTDIR\= sitearchdir\=./.gem.20260810-45735-21zfp6 sitelibdir\=./.gem.20260810-45735-21zfp6 clean
+
+current directory: /Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/taskService/vendor/bundle/ruby/4.0.0/gems/pg-1.2.3/ext
+make -j3 DESTDIR\= sitearchdir\=./.gem.20260810-45735-21zfp6 sitelibdir\=./.gem.20260810-45735-21zfp6
+compiling gvl_wrappers.c
+compiling pg_binary_decoder.c
+compiling pg.c
+In file included from gvl_wrappers.c:6:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:In file included from In file included from pg_binary_decoder.c:8:
+In file included from 68./pg.h::561:pg.c:
+:49:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h :68warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+In file included from ./pg.h::615:
+:/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5:  warning: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+
+   68 | #if SIZE   O68F | _#ViOfI   D68_ | P# i>f=   SIZEOFS_IVZOEIODF8
+      |     ^
+__VPO I>D=_ P/opt/homebrew/include/postgresql@14/pg_config_manual.h8 >=:151:
+      |     ^5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+ 
+  1518 | 
+#      i| f    ^ 
+HAVE_DECL_POS/opt/homebrew/include/postgresql@14/pg_config_manual.hI:X151_:F5A:D V/opt/homebrew/include/postgresql@14/pg_config_manual.hI:S151E: 5&:& warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 defined(HAwarning:  | 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]#
+if HAVVE_DECL_POS  I151X | _#FiE_POSIX_AFfA DHVAIVSDVISE_ED)E
+C      LE && d| _    ^P
+OSIXe_fined(HAVEF_PADVISEOSIX_FADVISE )&
+&       | d    ^e
+fined(HAVE_POSIX_FADVISE)
+      |     ^
+2 warnings generated.
+2 warnings generated.
+2 warnings generated.
+compiling pg_binary_encoder.c
+compiling pg_coder.c
+compiling pg_connection.c
+In file included from pg_binary_encoder.c:7:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+   68 | #In file included from pg_connection.c:7:
+In file included from ./pg.hi:f61 :
+S/opt/homebrew/include/postgresql@14/pg_config_manual.hI:Z68E:O5F:_ Vwarning: O'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]I
+D_P >= 8
+         | 68    ^ | 
+#if SIZEOF_VOID_P >= /opt/homebrew/include/postgresql@14/pg_config_manual.h8:
+151      :| 5    ^:
+ warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151/opt/homebrew/include/postgresql@14/pg_config_manual.h | :#151if HAVE_DECL_POSIX_FADVISE && def:5: iwarning: n'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]e
+d(HAVE_P  O151S | I#Xi_fF AHDVISE)
+      | A    ^V
+E_DECL_POSIX_FADVISE && definIn file included from pg_coder.c:6:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:e68d:(5H:A warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+V   E68_ | P#OiSfI XS_IFZAEDOVFI_SVEO)I
+D      _|     ^
+P >= 8
+      |     ^
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:151:5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 | #if HAVE_DECL_POSIX_FADVISE && defined(HAVE_POSIX_FADVISE)
+      |     ^
+pg_connection.c:36:2: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+   36 |         Data_Get_Struct( self, t_pg_connection, this);
+      |         ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:278:34: note: expanded from macro 'Data_Get_Struct'
+  278 |     ((sval) = RBIMPL_CAST((type*)rb_data_object_get(obj)))
+      |                                  ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:370:31: note: expanded from macro 'rb_data_object_get'
+  370 | #define rb_data_object_get    RUBY_MACRO_SELECT(rb_data_object_get_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:201:1: note: expanded from here
+  201 | rb_data_object_get_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:368:31: note: expanded from macro 'rb_data_object_get_1'
+  368 | #define rb_data_object_get_1  rb_data_object_get_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:317:1: note: 'rb_data_object_get_warning' has been explicitly marked deprecated here
+  317 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_connection.c:49:2: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+   49 |         Data_Get_Struct( self, t_pg_connection, this);
+      |         ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:278:34: note: expanded from macro 'Data_Get_Struct'
+  278 |     ((sval) = RBIMPL_CAST((type*)rb_data_object_get(obj)))
+      |                                  ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:370:31: note: expanded from macro 'rb_data_object_get'
+  370 | #define rb_data_object_get    RUBY_MACRO_SELECT(rb_data_object_get_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:202:1: note: expanded from here
+  202 | rb_data_object_get_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:368:31: note: expanded from macro 'rb_data_object_get_1'
+  368 | #define rb_data_object_get_1  rb_data_object_get_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:317:1: note: 'rb_data_object_get_warning' has been explicitly marked deprecated here
+  317 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_connection.c:68:2: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+   68 |         Data_Get_Struct( self, t_pg_connection, this);
+      |         ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:278:34: note: expanded from macro 'Data_Get_Struct'
+  278 |     ((sval) = RBIMPL_CAST((type*)rb_data_object_get(obj)))
+      |                                  ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:370:31: note: expanded from macro 'rb_data_object_get'
+  370 | #define rb_data_object_get    RUBY_MACRO_SELECT(rb_data_object_get_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:203:1: note: expanded from here
+  203 | rb_data_object_get_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:368:31: note: expanded from macro 'rb_data_object_get_1'
+  368 | #define rb_data_object_get_1  rb_data_object_get_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:317:1: note: 'rb_data_object_get_warning' has been explicitly marked deprecated here
+  317 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_coder.c:216:34: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  216 |         res = this->dec_func(this, val, RSTRING_LEN(argv[0]), tuple, field, ENCODING_GET(argv[0]));
+      |               ~~~~                      ^~~~~~~~~~~~~~~~~~~~
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rstring.h:46:27: note: expanded from macro 'RSTRING_LEN'
+   46 | #define RSTRING_LEN       RSTRING_LEN
+      |                           ^
+pg_coder.c:407:20: warning: 'rb_data_object_wrap_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+  407 |         VALUE cfunc_obj = Data_Wrap_Struct( rb_cObject, NULL, NULL, func );
+      |                           ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:202:5: note: expanded from macro 'Data_Wrap_Struct'
+  202 |     rb_data_object_wrap(                          \
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:366:31: note: expanded from macro 'rb_data_object_wrap'
+  366 | #define rb_data_object_wrap   RUBY_MACRO_SELECT(rb_data_object_wrap_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:201:1: note: expanded from here
+  201 | rb_data_object_wrap_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:364:31: note: expanded from macro 'rb_data_object_wrap_1'
+  364 | #define rb_data_object_wrap_1 rb_data_object_wrap_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:280:1: note: 'rb_data_object_wrap_warning' has been explicitly marked deprecated here
+  280 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_connection.c:679:17: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  679 |         return INT2NUM(atol(port));
+      |                ~~~~~~~ ^~~~~~~~~~
+pg_connection.c:1073:26: warning: 'rb_data_object_wrap_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1073 |                 *typecast_heap_chain = Data_Wrap_Struct( rb_cObject, NULL, free_typecast_heap_chain, allocated );
+      |                                        ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:202:5: note: expanded from macro 'Data_Wrap_Struct'
+  202 |     rb_data_object_wrap(                          \
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:366:31: note: expanded from macro 'rb_data_object_wrap'
+  366 | #define rb_data_object_wrap   RUBY_MACRO_SELECT(rb_data_object_wrap_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:204:1: note: expanded from here
+  204 | rb_data_object_wrap_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:364:31: note: expanded from macro 'rb_data_object_wrap_1'
+  364 | #define rb_data_object_wrap_1 rb_data_object_wrap_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:280:1: note: 'rb_data_object_wrap_warning' has been explicitly marked deprecated here
+  280 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_connection.c:1117:27: warning: 'rb_data_object_wrap_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1117 |                 paramsData->heap_pool = Data_Wrap_Struct( rb_cObject, NULL, -1, memory_pool );
+      |                                         ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:202:5: note: expanded from macro 'Data_Wrap_Struct'
+  202 |     rb_data_object_wrap(                          \
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:366:31: note: expanded from macro 'rb_data_object_wrap'
+  366 | #define rb_data_object_wrap   RUBY_MACRO_SELECT(rb_data_object_wrap_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:205:1: note: expanded from here
+  205 | rb_data_object_wrap_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:364:31: note: expanded from macro 'rb_data_object_wrap_1'
+  364 | #define rb_data_object_wrap_1 rb_data_object_wrap_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:280:1: note: 'rb_data_object_wrap_warning' has been explicitly marked deprecated here
+  280 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_connection.c:1422:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+ 1422 | pgconn_describe_portal(self, stmt_name)
+      | ^
+pg_connection.c:2052:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+ 2052 | pgconn_consume_input(self)
+      | ^
+pg_connection.c:2074:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+ 2074 | pgconn_is_busy(self)
+      | ^
+pg_connection.c:2097:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+ 2097 | pgconn_setnonblocking(self, state)
+      | ^
+pg_connection.c:2127:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+ 2127 | pgconn_isnonblocking(self)
+      | ^
+pg_connection.c:2144:1: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C23 [-Wdeprecated-non-prototype]
+ 2144 | pgconn_flush(self)
+      | ^
+pg_connection.c:2473:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 2473 |                 Data_Get_Struct( encoder, t_pg_coder, p_coder );
+      |                 ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:278:34: note: expanded from macro 'Data_Get_Struct'
+  278 |     ((sval) = RBIMPL_CAST((type*)rb_data_object_get(obj)))
+      |                                  ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:370:31: note: expanded from macro 'rb_data_object_get'
+  370 | #define rb_data_object_get    RUBY_MACRO_SELECT(rb_data_object_get_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:206:1: note: expanded from here
+  206 | rb_data_object_get_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:368:31: note: expanded from macro 'rb_data_object_get_1'
+  368 | #define rb_data_object_get_1  rb_data_object_get_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:317:1: note: 'rb_data_object_get_warning' has been explicitly marked deprecated here
+  317 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_connection.c:2585:3: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 2585 |                 Data_Get_Struct( decoder, t_pg_coder, p_coder );
+      |                 ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:278:34: note: expanded from macro 'Data_Get_Struct'
+  278 |     ((sval) = RBIMPL_CAST((type*)rb_data_object_get(obj)))
+      |                                  ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:370:31: note: expanded from macro 'rb_data_object_get'
+  370 | #define rb_data_object_get    RUBY_MACRO_SELECT(rb_data_object_get_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:207:1: note: expanded from here
+  207 | rb_data_object_get_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:368:31: note: expanded from macro 'rb_data_object_get_1'
+  368 | #define rb_data_object_get_1  rb_data_object_get_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:317:1: note: 'rb_data_object_get_warning' has been explicitly marked deprecated here
+  317 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+2 warnings generated.
+compiling pg_copy_coder.c
+4 warnings generated.
+compiling pg_errors.c
+In file included from pg_copy_coder.c:6:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+   68 | #if SIZEOF_VOID_P >= 8
+      |     ^
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:151:5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 | #if HAVE_DECL_POSIX_FADVISE && defined(HAVE_POSIX_FADVISE)
+      |     ^
+pg_copy_coder.c:228:15: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  228 |                                         strlen = RSTRING_LEN(subint);
+      |                                                ~ ^~~~~~~~~~~~~~~~~~~
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rstring.h:46:27: note: expanded from macro 'RSTRING_LEN'
+   46 | #define RSTRING_LEN       RSTRING_LEN
+      |                           ^
+pg_copy_coder.c:534:23: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  534 |                 input_len = end_ptr - start_ptr;
+      |                           ~ ~~~~~~~~^~~~~~~~~~~
+In file included from pg_errors.c:6:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+   68 | #if SIZEOF_VOID_P >= 8
+      |     ^
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:151:5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 | #if HAVE_DECL_POSIX_FADVISE && defined(HAVE_POSIX_FADVISE)
+      |     ^
+4 warnings generated.
+compiling pg_record_coder.c
+2 warnings generated.
+compiling pg_result.c
+In file included from pg_record_coder.c:6:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+   68 | #if SIZEOF_VOID_P >= 8
+      |     ^
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:151:5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 | #if HAVE_DECL_POSIX_FADVISE && defined(HAVE_POSIX_FADVISE)
+      |     ^
+pg_record_coder.c:196:15: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  196 |                                         strlen = RSTRING_LEN(subint);
+      |                                                ~ ^~~~~~~~~~~~~~~~~~~
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rstring.h:46:27: note: expanded from macro 'RSTRING_LEN'
+   46 | #define RSTRING_LEN       RSTRING_LEN
+      |                           ^
+3 warnings generated.
+16 warnings generated.
+compiling pg_text_decoder.c
+compiling pg_text_encoder.c
+In file included from pg_result.c:7:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+   68 | #if SIZEOF_VOID_P >= 8
+      |     ^
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:151:5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 | #if HAVE_DECL_POSIX_FADVISE && defined(HAVE_POSIX_FADVISE)
+      |     ^
+pg_result.c:1006:17: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+ 1006 |         return INT2NUM(n);
+      |                ~~~~~~~ ^
+pg_result.c:1332:2: warning: 'rb_data_object_get_warning' is deprecated: by TypedData [-Wdeprecated-declarations]
+ 1332 |         Data_Get_Struct(typemap, t_typemap, p_typemap);
+      |         ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:278:34: note: expanded from macro 'Data_Get_Struct'
+  278 |     ((sval) = RBIMPL_CAST((type*)rb_data_object_get(obj)))
+      |                                  ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:370:31: note: expanded from macro 'rb_data_object_get'
+  370 | #define rb_data_object_get    RUBY_MACRO_SELECT(rb_data_object_get_2, RUBY_UNTYPED_DATA_WARNING)
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:50:35: note: expanded from macro 'RUBY_MACRO_SELECT'
+   50 | #define RUBY_MACRO_SELECT(x, y)   RBIMPL_MACRO_SELECT(x, y)
+      |                                   ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:49:35: note: expanded from macro 'RBIMPL_MACRO_SELECT'
+   49 | #define RBIMPL_MACRO_SELECT(x, y) x ## y
+      |                                   ^
+<scratch space>:201:1: note: expanded from here
+  201 | rb_data_object_get_1
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:368:31: note: expanded from macro 'rb_data_object_get_1'
+  368 | #define rb_data_object_get_1  rb_data_object_get_warning
+      |                               ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:317:1: note: 'rb_data_object_get_warning' has been explicitly marked deprecated here
+  317 | RBIMPL_ATTRSET_UNTYPED_DATA_FUNC()
+      | ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rdata.h:47:5: note: expanded from macro 'RBIMPL_ATTRSET_UNTYPED_DATA_FUNC'
+   47 |     RBIMPL_ATTR_DEPRECATED(("by TypedData"))
+      |     ^
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+   36 | # define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+      |                                                     ^
+pg_result.c:1590:58: error: use of undeclared identifier 'rb_cData'
+ 1590 |         rb_cPGresult = rb_define_class_under( rb_mPG, "Result", rb_cData );
+      |                                                                 ^~~~~~~~
+4 warnings and 1 error generated.
+make: *** [pg_result.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from pg_text_encoder.c:43:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+   68 | #if SIZEOF_VOID_P >= 8
+      |     ^
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:151:5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 | #if HAVE_DECL_POSIX_FADVISE && defined(HAVE_POSIX_FADVISE)
+      |     ^
+In file included from pg_text_decoder.c:32:
+In file included from ./pg.h:61:
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:68:5: warning: 'SIZEOF_VOID_P' is not defined, evaluates to 0 [-Wundef]
+   68 | #if SIZEOF_VOID_P >= 8
+      |     ^
+/opt/homebrew/include/postgresql@14/pg_config_manual.h:151:5: warning: 'HAVE_DECL_POSIX_FADVISE' is not defined, evaluates to 0 [-Wundef]
+  151 | #if HAVE_DECL_POSIX_FADVISE && defined(HAVE_POSIX_FADVISE)
+      |     ^
+pg_text_encoder.c:194:14: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  194 |                         len = out - start;
+      |                             ~ ~~~~^~~~~~~
+pg_text_encoder.c:406:15: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  406 |                 return optr - out;
+      |                 ~~~~~~ ~~~~~^~~~~
+pg_text_encoder.c:410:12: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  410 |                 return 2 + RSTRING_LEN(*intermediate) * 2;
+      |                 ~~~~~~ ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pg_text_encoder.c:617:13: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+  617 |         nr_elems = RARRAY_LEN(value);
+      |                  ~ ^~~~~~~~~~~~~~~~~
+/opt/homebrew/Cellar/ruby/4.0.6/include/ruby-4.0.0/ruby/internal/core/rarray.h:51:36: note: expanded from macro 'RARRAY_LEN'
+   51 | #define RARRAY_LEN                 rb_array_len                 /**< @alias{rb_array_len} */
+      |                                    ^
+6 warnings generated.
+2 warnings generated.
+
+make failed, exit code 2

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "graphify": {
+      "command": "/Users/harshit.sharma8/.local/share/uv/tools/graphifyy/bin/python",
+      "args": ["-m", "graphify.serve", "/Users/harshit.sharma8/Documents/Learning/Zidd_project/microservice-demo/graphify-out/graph.json"]
+    }
+  }
+}

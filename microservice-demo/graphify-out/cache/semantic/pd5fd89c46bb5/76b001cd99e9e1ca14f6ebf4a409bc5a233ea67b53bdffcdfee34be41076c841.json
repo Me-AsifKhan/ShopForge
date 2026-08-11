@@ -1,0 +1,1 @@
+{"nodes": [{"id": "frontend_50x_nginx_error_page", "label": "nginx default error page", "file_type": "document", "source_file": "frontend/50x.html", "source_location": null, "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}

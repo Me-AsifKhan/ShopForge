@@ -1,0 +1,103 @@
+# frozen_string_literal: true
+
+require 'rom/initializer'
+require 'rom/cache'
+require 'rom/constants'
+
+module ROM
+  # @api private
+  class Registry
+    extend Initializer
+    extend ::Dry::Core::Cache
+
+    include ::Enumerable
+    include ::Dry::Equalizer(:elements)
+
+    # @!attribute [r] elements
+    #   @return [Hash] Internal hash for storing registry objects
+    param :elements
+
+    # @!attribute [r] cache
+    #   @return [Cache] local cache instance
+    option :cache, default: -> { Cache.new }
+
+    # @api private
+    def self.new(*args, **kwargs)
+      if args.empty? && kwargs.empty?
+        super({}, **{})
+      else
+        super
+      end
+    end
+
+    # Create a registry without options
+    #
+    # @api private
+    def self.build(elements = {}) = new(elements, **{})
+
+    # @api private
+    def self.[](identifier)
+      fetch_or_store(identifier) do
+        ::Dry::Core::ClassBuilder
+          .new(parent: self, name: "#{name}[:#{identifier}]")
+          .call
+      end
+    end
+
+    # @api private
+    def self.element_not_found_error = ElementNotFoundError
+
+    # @api private
+    def merge(other) = self.class.new(Hash(other), **options)
+
+    # @api private
+    def to_hash = elements
+
+    # @api private
+    def map(&)
+      new_elements = elements.transform_values(&)
+      self.class.new(new_elements, **options)
+    end
+
+    # @api private
+    def each(&)
+      return to_enum unless block_given?
+
+      elements.each(&)
+    end
+
+    # @api private
+    def each_value(&)
+      return to_enum(:each_value) unless block_given?
+
+      elements.each_value(&)
+    end
+
+    # @api private
+    def key?(name) = !name.nil? && elements.key?(name.to_sym)
+
+    # @api private
+    def fetch(key)
+      raise ArgumentError, 'key cannot be nil' if key.nil?
+
+      elements.fetch(key.to_sym) do
+        return yield if block_given?
+
+        raise self.class.element_not_found_error.new(key, self)
+      end
+    end
+    alias_method :[], :fetch
+
+    def type = self.class.name
+
+    # @api private
+    def respond_to_missing?(name, include_private = false)
+      elements.key?(name) || super
+    end
+
+    private
+
+    # @api private
+    def method_missing(name, *) = elements.fetch(name) { super }
+  end
+end

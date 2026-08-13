@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: user
+  namespace: shopforge
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: user
+
+  template:
+    metadata:
+      labels:
+        app: user
+
+    spec:
+      containers:
+        - name: user
+          image: microservice/demo/user:latest
+
+          imagePullPolicy: IfNotPresent 
+
+          ports:
+            - containerPort: 50051
+
+          #Take the values from these objects and make them environment 
+          #variables inside the container.
+          envFrom:
+            - configMapRef:
+                name: user-config
+
+            - secretRef:
+                name: user-secret

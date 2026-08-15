@@ -1,6 +1,6 @@
-FROM ruby:2.7
+FROM ruby:3.3
 
-# throw errors if Gemfile has been modified since Gemfile.lock
+RUN gem install bundler:4.0.18
 RUN bundle config --global frozen 1
 
 WORKDIR /app

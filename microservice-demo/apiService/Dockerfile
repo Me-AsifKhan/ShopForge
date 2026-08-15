@@ -17,7 +17,9 @@ RUN update-ca-certificates
 COPY . ${SRC_DIR}
 
 # Build App
-RUN ./build.sh
+RUN go mod verify
+RUN go mod vendor
+RUN go install -v ./...
 
 EXPOSE 50059
 ENTRYPOINT [ "apiService" ]
